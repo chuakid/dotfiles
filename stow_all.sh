@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 for folder in */;
 do
-	stow --dotfiles ${folder}
+    stow --dotfiles ${folder}
 done
 
