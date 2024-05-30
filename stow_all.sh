@@ -5,12 +5,11 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 BLUE='\033[0;34m'
 
-
 echo -e "${RED}all?${NC}"
 select choice in "Yes" "No"; do
     case $choice in
     Yes)
-        for folder in */; do stow --dotfiles "${folder}"; done
+        stow */
         exit
         ;;
     No) break ;;
