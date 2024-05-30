@@ -9,7 +9,7 @@ echo -e "${RED}all?${NC}"
 select choice in "Yes" "No"; do
     case $choice in
     Yes)
-        stow */
+        stow --dotfiles */
         exit
         ;;
     No) break ;;
