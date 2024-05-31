@@ -2,5 +2,8 @@
 	path = mpv/dot-config/mpv/scripts/mpvacious
 	url = https://github.com/Ajatt-Tools/mpvacious.git
 [submodule "powerlevel10k/dot-oh-my-zsh/themes/powerlevel10k"]
-	path = powerlevel10k/dot-oh-my-zsh/themes/powerlevel10k
+	path = powerlevel10k/dot-oh-my-zsh/custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "powerlevel10k/dot-oh-my-zsh/custom/themes/powerlevel10k"]
+	path = powerlevel10k/dot-oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
