@@ -3,6 +3,5 @@
 `./stow_all` to place configs
 
 TODO:
-- Auto install zsh
-- Install powerlevel10k
+- Install zsh
 - Install catppuccin for terminal emulators
