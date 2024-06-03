@@ -4,3 +4,9 @@
 [submodule "powerlevel10k/dot-oh-my-zsh/custom/themes/powerlevel10k"]
 	path = powerlevel10k/dot-oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh/dot-oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
+	path = zsh/dot-oh-my-zsh/custom/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
+[submodule "zsh/dot-oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = zsh/dot-oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
