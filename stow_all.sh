@@ -21,7 +21,7 @@ echo
 
 # Choose configs
 for folder in */; do
-    echo -e "${BLUE}${folder::-1}?${NC}" # remove / from folder name
+    echo -e "${BLUE}$folder?${NC}" # remove / from folder name
     select choice in "Yes" "No"; do
         case $choice in
         Yes)
