@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install everything
-sudo dnf install $(< packages.list)
+sudo dnf install $(< home_packages.list)
 
 # Install omz
 if [ -d ~/.oh-my-zsh ]; then
