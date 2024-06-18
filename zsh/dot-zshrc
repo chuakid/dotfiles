@@ -69,5 +69,5 @@ eval "$(pyenv virtualenv-init -)"
 FNM_PATH="/home/kelvin/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
   export PATH="/home/kelvin/.local/share/fnm:$PATH"
-  eval "`fnm env`"
+  eval "`fnm env --use-on-cd`"
 fi
