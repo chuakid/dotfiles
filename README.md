@@ -9,4 +9,9 @@
 
 
 # Additional
-stow mpv if needed
+1. stow mpv if needed
+
+## Package list
+- [Delta](https://github.com/dandavison/delta)
+- [Bat](https://github.com/sharkdp/bat)
+- [Zoxide](https://github.com/ajeetdsouza/zoxide)
