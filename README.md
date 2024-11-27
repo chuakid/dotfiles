@@ -9,7 +9,8 @@
 
 
 # Additional
-1. stow mpv if needed
+- stow mpv if needed
+- `.zshrc_local` file in $HOME is sourced, meant for per-machine customisations
 
 ## Package list
 - [Delta](https://github.com/dandavison/delta)
