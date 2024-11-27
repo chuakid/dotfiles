@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[[ ! -f ~/.machine-specific-zsh ]] || source ~/.machine-specific-zsh
+[[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
