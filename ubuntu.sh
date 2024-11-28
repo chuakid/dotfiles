@@ -7,6 +7,6 @@ sudo apt install bat git-delta pipx
 pipx ensurepath
 pipx install tldr
 
-sudo ./install.sh
+./install.sh
 # to account for bat conflicting with another package on ubuntu
 sudo ln -s /usr/bin/batcat /usr/local/bin/bat
