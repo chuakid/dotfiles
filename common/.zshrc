@@ -52,18 +52,5 @@ source ~/.zshrc_tool_aliases
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fnm
-FNM_PATH="/home/kelvin/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/kelvin/.local/share/fnm:$PATH"
-  eval "`fnm env --use-on-cd`"
-fi
-
-
-
-# Created by `pipx` on 2024-11-28 14:08:50
-export PATH="$PATH:/home/kelvin/.local/bin"
