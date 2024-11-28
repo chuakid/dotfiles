@@ -64,3 +64,6 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 
+
+# Created by `pipx` on 2024-11-28 14:08:50
+export PATH="$PATH:/home/kelvin/.local/bin"
