@@ -1,3 +1,6 @@
+# Ubuntu
+Run `ubuntu.sh`, will install zsh and stow and everything else
+
 # Prerequisites
 1. zsh
 2. stow
