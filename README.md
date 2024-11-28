@@ -16,5 +16,6 @@
 - [Delta](https://github.com/dandavison/delta)
 - [Bat](https://github.com/sharkdp/bat)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
-- [Eza](https://github.com/eza-community/eza)
+- [tldr](https://github.com/tldr-pages/tldr)
 - [FNM](https://github.com/Schniz/fnm)
+
