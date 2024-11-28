@@ -4,8 +4,8 @@ sudo apt install zsh
 sudo curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
 sudo apt install bat git-delta pipx
-sudo pipx ensurepath
-sudo pipx install tldr
+pipx ensurepath
+pipx install tldr
 
 sudo ./install.sh
 # to account for bat conflicting with another package on ubuntu
