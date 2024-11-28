@@ -17,3 +17,4 @@
 - [Bat](https://github.com/sharkdp/bat)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [Eza](https://github.com/eza-community/eza)
+- [FNM](https://github.com/Schniz/fnm)
