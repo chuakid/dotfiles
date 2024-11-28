@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install zsh
+sudo apt install zsh stow
 # install zoxide
 sudo curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
