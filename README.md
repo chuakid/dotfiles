@@ -1,3 +1,5 @@
+# Description
+Kelvin's dotfiles, powered by Nix.
 # Ubuntu
 Run `ubuntu.sh`, will install zsh and run ./install
 
