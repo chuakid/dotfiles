@@ -1,3 +1,6 @@
+# Install omz
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
 # Install home manager
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
@@ -8,4 +11,4 @@ home-manager switch -f home.nix
 
 # stow
 stow common --adopt
-git reset --hard # to reset zshrc
+git restore . # to reset zshrc
