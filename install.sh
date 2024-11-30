@@ -4,7 +4,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 # Install home manager
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-nix-channel --updatei
+nix-channel --update
 nix-shell '<home-manager>' -A install
 
 # home-manager switch
