@@ -1,5 +1,8 @@
 # Ubuntu
-Run `ubuntu.sh`, will install zsh and stow and everything else
+Run `ubuntu.sh`, will install zsh and run ./install
+
+# Mac
+// TODO
 
 # Prerequisites
 1. zsh
@@ -8,7 +11,7 @@ Run `ubuntu.sh`, will install zsh and stow and everything else
 # Steps
 1. clone the repo `git clone https://github.com/chuakid/dotfiles.git --recurse-submodules --depth 1`
 2. `./install.sh`
-3. make a .gitconfig.local file with the [user] directive with name and email
+3. make a `.gitconfig_local` file with the [user] directive with name and email
 
 
 # Additional
@@ -20,5 +23,4 @@ Run `ubuntu.sh`, will install zsh and stow and everything else
 - [Bat](https://github.com/sharkdp/bat)
 - [Zoxide](https://github.com/ajeetdsouza/zoxide)
 - [tldr](https://github.com/tldr-pages/tldr)
-- [FNM](https://github.com/Schniz/fnm)
 
