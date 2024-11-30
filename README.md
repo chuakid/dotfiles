@@ -12,9 +12,9 @@ Run `ubuntu.sh`, will install zsh and run ./install
 
 # Steps
 1. clone the repo `git clone https://github.com/chuakid/dotfiles.git --recurse-submodules --depth 1`
-2. `./install.sh`
-3. make a `.gitconfig_local` file with the [user] directive with name and email
-
+2. `./install.sh` and Run the command to start the nix daemon
+3. `./install2.sh`
+4. make a `.gitconfig_local` file with the [user] directive with name and email
 
 # Additional
 - stow mpv if needed
