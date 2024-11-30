@@ -49,6 +49,9 @@ source $ZSH/oh-my-zsh.sh
 # Tool aliases
 source ~/.zshrc_tool_aliases
 
+# alias home manager
+alias switch="home-manager switch -f ~/dotfiles/home.nix"
+
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
