@@ -23,7 +23,6 @@
     eza
     bat
     delta
-    zsh
     tmux
     zoxide
     # # Adds the 'hello' command to your environment. It prints a friendly
