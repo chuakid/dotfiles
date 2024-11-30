@@ -23,7 +23,9 @@
     eza
     bat
     delta
-    zsh 
+    zsh
+    tmux
+    zoxide
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -41,6 +43,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
