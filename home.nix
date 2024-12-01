@@ -31,6 +31,7 @@
     go
     python3
     nodejs
+    pnpm
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
