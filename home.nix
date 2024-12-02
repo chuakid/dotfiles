@@ -19,7 +19,6 @@
   # environment.
   home.packages = with pkgs; [
     stow
-    neovim
     eza
     bat
     delta
@@ -30,7 +29,6 @@
     jq
     go
     python3
-    nodejs
     pnpm
     lazygit
     # # Adds the 'hello' command to your environment. It prints a friendly
