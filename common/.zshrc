@@ -22,6 +22,7 @@ setopt hist_find_no_dups
 # Case sensitive completions
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# Highlight when tabbing through files/folders
 zstyle ':completion:*' menu select
 
 # plugins
@@ -32,7 +33,6 @@ done
 
 # aliases
 source ~/.zsh_aliases
-
 
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
