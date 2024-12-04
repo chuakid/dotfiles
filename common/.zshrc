@@ -5,58 +5,52 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH="$PATH:~/.local/bin"
+# History settings
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=5000
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Case sensitive completions
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu select
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# plugins
+for plugin_folder in $(ls ~/.zsh_plugins) 
+do
+source ~/.zsh_plugins/$plugin_folder/$plugin_folder.plugin.zsh
+done
 
-# COMPLETION_WAITING_DOTS="true"
+# aliases
+source ~/.zsh_aliases
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(
- git
- zsh-autosuggestions
- fast-syntax-highlighting
-)
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Tool aliases
-source ~/.zshrc_tool_aliases
-
-# alias home manager
-alias switch="home-manager switch -f ~/dotfiles/home.nix"
 
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# alias home manager
+alias switch="home-manager switch -f ~/dotfiles/home.nix"
 
 # zoxide
-eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null 
+then 
+  eval "$(zoxide init zsh)"
+fi
+
+# Ctrl + arrow key
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
+# Powerlevel10k
+source ~/.powerlevel10k/powerlevel10k.zsh-theme
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

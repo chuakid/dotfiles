@@ -7,6 +7,6 @@
 [submodule "common/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
 	path = common/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
-[submodule "common/.oh-my-zsh/custom/themes/powerlevel10k"]
-	path = common/.oh-my-zsh/custom/themes/powerlevel10k
+[submodule "common/.powerlevel10k"]
+	path = common/.powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git

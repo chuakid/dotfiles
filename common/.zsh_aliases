@@ -17,3 +17,12 @@ if command -v bat >/dev/null
  then
     alias cat=bat
  fi
+
+# Git
+alias gaa="git add -A"
+alias gcmsg="git commit -m"
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gp="git push"
+alias gs="git status"
+alias gsc="git status --show-stash"
