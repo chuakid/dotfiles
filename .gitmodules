@@ -1,11 +1,11 @@
 [submodule "mpv/.config/mpv/scripts/mpvacious"]
 	path = mpv/.config/mpv/scripts/mpvacious
 	url = https://github.com/Ajatt-Tools/mpvacious.git
-[submodule "common/.oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-	path = common/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-[submodule "common/.oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
-	path = common/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
+[submodule "common/.zsh_plugins/zsh-autosuggestions"]
+    path = ccommon/.zsh_plugins/zsh-autosuggestions
+    url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "common/.zsh_plugins/fast-syntax-highlighting"]
+	path = ccommon/.zsh_plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
 [submodule "common/.powerlevel10k"]
 	path = common/.powerlevel10k
