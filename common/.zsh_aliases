@@ -10,6 +10,7 @@ if command -v eza >/dev/null
      alias ls=eza
      alias ll='eza -lg'
      alias tree='eza -T'
+     alias la='eza -a'
  fi
 
 # bat
