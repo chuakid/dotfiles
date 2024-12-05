@@ -20,6 +20,7 @@ if command -v bat >/dev/null
  fi
 
 # Git
+alias g=git
 alias gaa="git add -A"
 alias gcmsg="git commit -m"
 alias gd="git diff"
