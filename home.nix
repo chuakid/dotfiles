@@ -31,6 +31,7 @@
     python3
     pnpm
     lazygit
+    fd
   ];
 
 
