@@ -32,6 +32,7 @@
     pnpm
     lazygit
     fd
+    fzf
   ];
 
 
