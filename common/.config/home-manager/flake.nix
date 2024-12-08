@@ -20,7 +20,7 @@
             username = "kelvin";
           };
         };
-        work = home-manager.lib.homeManagerConfiguration {
+        SP13304 = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [ ./home.nix ];
           extraSpecialArgs = {
