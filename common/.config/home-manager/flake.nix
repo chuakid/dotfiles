@@ -18,6 +18,7 @@
           modules = [ ./home.nix ];
           extraSpecialArgs = {
             username = "kelvin";
+            homeDirectory = "/home/kelvin";
           };
         };
         SP13304 = home-manager.lib.homeManagerConfiguration {
@@ -25,6 +26,7 @@
           modules = [ ./home.nix ];
           extraSpecialArgs = {
             username = "SP13304";
+            homeDirectory = "/Users/SP13304";
           };
         };
       };
