@@ -24,7 +24,7 @@
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [ ./home.nix ];
           extraSpecialArgs = {
-            username = import ./username.nix;
+            username = "SP13304";
           };
         };
       };
