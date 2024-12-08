@@ -31,5 +31,29 @@
             fzf
           ];
         };
+      packages."x86_64-darwin".default =
+        let
+          pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+        in
+        pkgs.buildEnv {
+          name = "packages";
+          paths = with pkgs; [
+            stow
+            eza
+            bat
+            delta
+            tmux
+            zoxide
+            tlrc
+            gh
+            jq
+            go
+            python3
+            pnpm
+            lazygit
+            fd
+            fzf
+          ];
+        };
     };
 }
