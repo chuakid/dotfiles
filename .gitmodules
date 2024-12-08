@@ -13,3 +13,6 @@
 [submodule "common/.config/tmux/plugins/catppuccin"]
 	path = common/.config/tmux/plugins/catppuccin
 	url = https://github.com/catppuccin/tmux.git
+[submodule "common/.zsh_plugins/zsh-completions"]
+	path = common/.zsh_plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
