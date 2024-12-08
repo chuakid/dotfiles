@@ -37,9 +37,6 @@ source ~/.zsh_aliases
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
-# alias home manager
-alias switch="home-manager switch -f ~/dotfiles/home.nix"
-
 # zoxide
 if command -v zoxide >/dev/null 
 then 
