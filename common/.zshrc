@@ -33,7 +33,6 @@ done
 
 # aliases
 source ~/.zsh_aliases
-
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
