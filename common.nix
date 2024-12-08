@@ -1,0 +1,19 @@
+{ pkgs, ... }: with pkgs; [
+  stow
+  eza
+  bat
+  delta
+  tmux
+  zoxide
+  tlrc
+  gh
+  jq
+  go
+  python3
+  pnpm
+  lazygit
+  fd
+  fzf
+  nixpkgs-fmt
+  nil
+]
