@@ -1,5 +1,6 @@
 set termguicolors
 set t_Co=256
+set background=dark
 colorscheme catppuccin_macchiato
 set history=500
 " Enable filetype plugins
