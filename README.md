@@ -1,9 +1,6 @@
 # Description
 Kelvin's dotfiles, powered by Nix.
 
-# Mac
-// TODO
-
 # Prerequisites
 1. zsh
 2. stow
@@ -18,10 +15,4 @@ Kelvin's dotfiles, powered by Nix.
 # Additional
 - stow mpv if needed
 - `.zshrc_local` file in $HOME is sourced, meant for per-machine customisations
-
-## Package list
-- [Delta](https://github.com/dandavison/delta)
-- [Bat](https://github.com/sharkdp/bat)
-- [Zoxide](https://github.com/ajeetdsouza/zoxide)
-- [tldr](https://github.com/tldr-pages/tldr)
 
