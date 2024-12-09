@@ -15,7 +15,7 @@
       homeConfigurations = {
         kelvin = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = [ ./home.nix ];
+          modules = [ ./common.nix ];
           extraSpecialArgs = {
             username = "kelvin";
             homeDirectory = "/home/kelvin";
@@ -23,7 +23,7 @@
         };
         SP13304 = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-darwin;
-          modules = [ ./home.nix ];
+          modules = [ ./work.nix ];
           extraSpecialArgs = {
             username = "SP13304";
             homeDirectory = "/Users/SP13304";
