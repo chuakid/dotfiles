@@ -19,6 +19,11 @@ if command -v bat >/dev/null
     alias cat=bat
  fi
 
+if command -v z >/dev/null
+  then 
+    alias cd=z
+  fi
+
 # Git
 alias g=git
 alias gaa="git add -A"
