@@ -7,6 +7,7 @@
   
   home.packages = with pkgs; [
     yarn
+    bun
   ];
 
 # Let Home Manager install and manage itself.
