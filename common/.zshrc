@@ -55,3 +55,9 @@ export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 export EDITOR=vim
+
+if command -v direnv >/dev/null
+then
+ eval "$(direnv hook zsh)"
+fi
+
