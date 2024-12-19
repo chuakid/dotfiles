@@ -2,3 +2,4 @@ venv
 .envrc
 .idea
 .vscode
+.DS_Store
