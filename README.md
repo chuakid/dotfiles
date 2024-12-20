@@ -9,7 +9,8 @@ Kelvin's dotfiles, powered by Nix.
 2. install zsh
 3. `./install_nix.sh` and run the command to start the nix daemon
 4. `./install.sh`
-5. make a `.gitconfig_local` file with the [user] directive with name and email
+5. `home-manager switch`
+6. make a `.gitconfig_local` file with the [user] directive with name and email
 
 # Additional
 - stow mpv if needed
