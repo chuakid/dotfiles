@@ -33,6 +33,7 @@
     nixpkgs-fmt
     nil
     direnv
+    doggo
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
