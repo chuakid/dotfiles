@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     yarn
     bun
-    python311
   ];
 
 # Let Home Manager install and manage itself.
