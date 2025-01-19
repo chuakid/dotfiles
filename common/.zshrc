@@ -62,3 +62,5 @@ source ~/.zsh_aliases
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
 
+
+. "$HOME/.local/bin/env"
