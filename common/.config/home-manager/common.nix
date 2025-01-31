@@ -25,7 +25,6 @@
     gh
     jq
     go
-    python3
     pnpm
     lazygit
     fd
