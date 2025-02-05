@@ -37,10 +37,6 @@ then
   eval "$(zoxide init zsh --cmd cd)"
 fi
 
-# Ctrl + arrow key
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;5D" backward-word
-
 # Powerlevel10k
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
