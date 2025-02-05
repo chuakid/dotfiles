@@ -9,7 +9,7 @@ config.tab_bar_at_bottom = true
 
 config.window_padding = {
     left = 5,
-    right = 5,
+    right = "1cell",
     top = 0,
     bottom = 0
 }
@@ -17,6 +17,8 @@ config.window_padding = {
 config.inactive_pane_hsb = {
     brightness = 0.5,
 }
+
+config.enable_scroll_bar = true
 
 -- keys
 config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 2000}
