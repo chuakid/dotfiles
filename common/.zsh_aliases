@@ -8,7 +8,7 @@ if command -v tmux >/dev/null
 if command -v eza >/dev/null
  then
      alias ls=eza
-     alias ll='eza -lg --icons="always" --git'
+     alias ll='eza -lg --icons="auto" --git'
      alias tree='eza -T'
      alias la='eza -a'
  fi
