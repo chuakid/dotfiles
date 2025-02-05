@@ -14,6 +14,10 @@ config.window_padding = {
     bottom = 0
 }
 
+config.inactive_pane_hsb = {
+    brightness = 0.5,
+}
+
 -- keys
 config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 2000}
 config.keys = {
