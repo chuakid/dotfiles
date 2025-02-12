@@ -1,7 +1,3 @@
-set termguicolors
-set t_Co=256
-set background=dark
-colorscheme catppuccin_macchiato
 set history=500
 " Enable filetype plugins
 filetype plugin on
@@ -157,4 +153,10 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Always show the status line
 set laststatus=2
 
+" styles
+set termguicolors
+set t_Co=256
+set background=dark
+colorscheme catppuccin_macchiato
+hi Normal guibg=NONE ctermbg=NONE
 
