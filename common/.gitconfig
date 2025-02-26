@@ -16,3 +16,6 @@
 	helper = !~/.nix-profile/bin/gh auth git-credential
 [include]
     path = ~/.gitconfig_local
+[push]
+    autoSetupRemote = true
+    followTags = true
