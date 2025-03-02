@@ -33,11 +33,6 @@ config.keys = {
         action = act.SplitHorizontal,
     },
     {
-        key = 't',
-        mods = 'LEADER',
-        action = act.SpawnTab 'CurrentPaneDomain',
-    }, 
-    {
         key = 'x',
         mods = 'LEADER',
         action = act.CloseCurrentPane { confirm = true },
