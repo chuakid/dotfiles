@@ -8,6 +8,8 @@
   home.packages = with pkgs; [
     yarn
     bun
+
+    gnused # replace osx sed
   ];
 
 # Let Home Manager install and manage itself.
