@@ -47,6 +47,26 @@ config.keys = {
         mods = 'LEADER',
         action = act.ShowTabNavigator 
     },
+    {
+        key = 'h',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Left',
+    },
+    {
+        key = 'j',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Down',
+    },
+    {
+        key = 'k',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Up',
+    },
+    {
+        key = 'l',
+        mods = 'ALT',
+        action = wezterm.action.ActivatePaneDirection 'Right',
+    },
     -- Make CTRL-Right, Option-Left equivalent to Alt-b which many line editors interpret as backward-word
     {   key="LeftArrow", 
         mods="OPT", 
