@@ -6,7 +6,6 @@
   home.homeDirectory = homeDirectory;
   
   home.packages = with pkgs; [
-    yarn
     bun
 
     gnused # replace osx sed
