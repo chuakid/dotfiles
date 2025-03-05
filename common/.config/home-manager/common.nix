@@ -34,7 +34,9 @@
     direnv
     doggo
     btop
-    neovim
+
+    helix
+    yazi
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
