@@ -23,13 +23,13 @@ config.window_background_opacity = 0.9
 config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 2000}
 config.keys = {
     {
-        key = '-',
+        key = 'v',
         mods = 'LEADER',
         action = act.SplitVertical,
     },
     {
-        key = '|',
-        mods = 'LEADER|SHIFT',
+        key = 'h',
+        mods = 'LEADER',
         action = act.SplitHorizontal,
     },
     {
