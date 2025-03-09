@@ -47,6 +47,7 @@ config.keys = {
         mods = 'LEADER',
         action = act.ShowTabNavigator 
     },
+    -- alt + hjkl to move between panes 
     {
         key = 'h',
         mods = 'ALT',
