@@ -16,7 +16,6 @@ return {
     'mfussenegger/nvim-dap-python',
   },
   keys = {
-    -- Basic debugging keymaps, feel free to change to your liking!
     {
       '<F5>',
       function()
