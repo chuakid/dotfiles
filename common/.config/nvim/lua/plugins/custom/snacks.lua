@@ -37,9 +37,7 @@ return {
     {
       '<leader>sf',
       function()
-        require('snacks.picker').lines {
-          preview = 'none',
-        }
+        require('snacks.picker').lines()
       end,
       desc = '[S]earch [F]ile',
     },
