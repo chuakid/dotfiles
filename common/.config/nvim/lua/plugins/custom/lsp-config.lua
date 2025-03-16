@@ -38,15 +38,6 @@ return {
         },
       }
       local lspconfig = require 'lspconfig'
-      -- auto lint on save
-      lspconfig.eslint.setup {
-        on_attach = function(_, bufnr)
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            buffer = bufnr,
-            command = 'EslintFixAll',
-          })
-        end,
-      }
 
       for server, config in pairs(servers) do
         -- passing config.capabilities to blink.cmp merges with the capabilities in your
