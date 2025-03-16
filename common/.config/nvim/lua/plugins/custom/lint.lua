@@ -7,12 +7,7 @@ return {
       local lint = require 'lint'
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
-        javascript = { 'eslint' },
-        typescript = { 'eslint' },
-        javascriptreact = { 'eslint' },
-        typescriptreact = { 'eslint' },
-        css = { 'eslint' },
-        html = { 'eslint' },
+        python = { 'flake8' },
       }
 
       -- Create autocommand which carries out the actual linting
@@ -29,6 +24,16 @@ return {
           end
         end,
       })
+      -- auto lint on save
+      require('lspconfig').eslint.setup {
+        on_attach = function(_, bufnr)
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            group = lint_augroup,
+            buffer = bufnr,
+            command = 'EslintFixAll',
+          })
+        end,
+      }
     end,
   },
 }
