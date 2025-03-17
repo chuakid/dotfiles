@@ -48,6 +48,13 @@ return {
       end,
       desc = '[S]earch [H]elp',
     },
+    {
+      '<leader>sj',
+      function()
+        require('snacks.picker').jumps()
+      end,
+      desc = '[S]earch [J]umps',
+    },
     -- lazygit
     {
       '<leader>lg',
