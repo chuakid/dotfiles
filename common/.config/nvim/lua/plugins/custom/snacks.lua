@@ -78,7 +78,6 @@ return {
     explorer = { enabled = true }, -- file browser
     input = { enabled = true }, -- nicer command input
     picker = { enabled = true }, -- file picker
-    scroll = { enabled = true },
     image = { enabled = true },
     lazygit = { enabled = true },
   },
