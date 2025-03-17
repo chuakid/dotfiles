@@ -29,6 +29,13 @@ return {
       desc = '[S]earch [R]eferences',
     },
     {
+      '<leader>si',
+      function()
+        require('snacks.picker').lsp_implementations()
+      end,
+      desc = '[S]earch [R]eferences',
+    },
+    {
       '<leader>sg',
       function()
         require('snacks.picker').grep()
