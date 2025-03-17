@@ -4,7 +4,7 @@ return {
     opts = {
       current_line_blame = true,
       current_line_blame_opts = {
-        delay = 0,
+        delay = 200,
       },
       on_attach = function(bufnr)
         local gitsigns = require 'gitsigns'
@@ -15,6 +15,7 @@ return {
           vim.keymap.set(mode, l, r, opts)
         end
 
+        -- Actions
         map('n', '[c', function()
           if vim.wo.diff then
             vim.cmd.normal { '[c', bang = true }
@@ -23,7 +24,14 @@ return {
           end
         end, { desc = 'Jump to previous git [c]hange' })
 
-        -- Actions
+        map('n', ']c', function()
+          if vim.wo.diff then
+            vim.cmd.normal { ']c', bang = true }
+          else
+            gitsigns.nav_hunk 'prev'
+          end
+        end, { desc = 'Jump to next git [c]hange' })
+
         -- visual mode
         map('v', '<leader>hs', function()
           gitsigns.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
