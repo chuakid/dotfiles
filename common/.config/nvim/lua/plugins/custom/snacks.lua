@@ -16,6 +16,7 @@ return {
       function()
         require('snacks.picker').smart {
           hidden = true,
+          multi = { 'buffers', 'files' },
         }
       end,
       desc = 'Search all files',
