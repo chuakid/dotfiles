@@ -88,6 +88,13 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
 vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = 'Go to implementation' })
 
+-- move to start and end of line, inspired by helix
+vim.keymap.set('n', 'gh', '^', { desc = 'Go to start of line' })
+vim.keymap.set('n', 'gl', '$', { desc = 'Go to end of line' })
+
+-- utility paste function
+vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
+
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
