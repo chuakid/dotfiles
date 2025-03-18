@@ -17,7 +17,7 @@ config.inactive_pane_hsb = {
 }
 config.enable_scroll_bar = true
 config.max_fps = 165
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.95
 
 -- keys
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
