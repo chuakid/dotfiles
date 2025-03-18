@@ -33,3 +33,6 @@ alias gf="git fetch --all"
 
 # Wezterm
 alias title="wezterm cli set-tab-title"
+
+# nvim
+alias n=nvim
