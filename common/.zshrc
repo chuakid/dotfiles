@@ -45,7 +45,7 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
-export EDITOR=hx
+export EDITOR=nvim
 
 if command -v direnv >/dev/null
 then
