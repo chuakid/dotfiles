@@ -87,4 +87,12 @@ config.keys = {
 		action = wezterm.action({ SendString = "\x1bf" }),
 	},
 }
+
+config.unix_domains = {
+	{
+		name = "default",
+	},
+}
+
+config.default_gui_startup_args = { "connect", "default" }
 return config
