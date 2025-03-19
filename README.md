@@ -1,11 +1,16 @@
-# Description
+# Dotfiles
+
+## Description
+
 Kelvin's dotfiles, powered by Nix.
 
-# Prerequisites
+## Prerequisites
+
 1. zsh
 2. stow
 
-# Steps
+## Steps
+
 1. clone the repo `git clone https://github.com/chuakid/dotfiles.git --recurse-submodules --depth 1`
 2. install zsh
 3. Bootstrap the home-manager repo with stow `stow common`
@@ -14,7 +19,7 @@ Kelvin's dotfiles, powered by Nix.
 6. `home-manager switch`
 7. make a `.gitconfig_local` file with the [user] directive with name and email
 
-# Additional
-- stow mpv if needed
-- `.zshrc_local` file in $HOME is sourced, meant for per-machine customisations
+## Additional
 
+- stow mpv if needed
+- `~/.zshrc_local` and `.gitconfig_local` are sourced, meant for per-machine customisations
