@@ -153,13 +153,12 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
   {
-    'catppuccin/nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
     config = function()
-      require('catppuccin').setup {
-        flavour = 'macchiato',
-      }
-      vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'tokyonight'
     end,
   },
   -- import rest of plugins

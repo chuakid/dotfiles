@@ -13,7 +13,7 @@ config.window_padding = {
 	bottom = 0,
 }
 config.inactive_pane_hsb = {
-	brightness = 0.5,
+	brightness = 0.8,
 }
 config.enable_scroll_bar = true
 config.max_fps = 165
@@ -94,5 +94,4 @@ config.unix_domains = {
 	},
 }
 
-config.default_gui_startup_args = { "connect", "default" }
 return config
