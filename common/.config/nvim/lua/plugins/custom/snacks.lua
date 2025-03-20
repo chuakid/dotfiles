@@ -80,5 +80,6 @@ return {
     picker = { enabled = true }, -- file picker
     image = { enabled = true },
     lazygit = { enabled = true },
+    indent = { enabled = true },
   },
 }
