@@ -15,7 +15,6 @@ return {
       '<leader><leader>',
       function()
         require('snacks.picker').smart {
-          hidden = true,
           multi = { 'buffers', 'files' },
         }
       end,
@@ -63,6 +62,13 @@ return {
       end,
       desc = '[S]earch [J]umps',
     },
+    {
+      '<leader>sk',
+      function()
+        require('snacks.picker').keymaps()()
+      end,
+      desc = '[S]earch [K]eymaps',
+    },
     -- lazygit
     {
       '<leader>lg',
@@ -77,7 +83,13 @@ return {
     dashboard = { enabled = true }, -- dashboard
     explorer = { enabled = true }, -- file browser
     input = { enabled = true }, -- nicer command input
-    picker = { enabled = true }, -- file picker
+    picker = { enabled = true, hidden = true, win = {
+      input = {
+        keys = {
+          ['H'] = 'toggle_hidden',
+        },
+      },
+    } }, -- file picker
     image = { enabled = true },
     lazygit = { enabled = true },
     indent = { enabled = true },
