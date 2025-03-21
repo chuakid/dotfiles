@@ -98,13 +98,18 @@ return {
     dashboard = { enabled = true }, -- dashboard
     explorer = { enabled = true }, -- file browser
     input = { enabled = true }, -- nicer command input
-    picker = { enabled = true, hidden = true, win = {
-      input = {
-        keys = {
-          ['H'] = 'toggle_hidden',
+    picker = {
+      enabled = true,
+      hidden = true,
+      win = {
+        input = {
+          keys = {
+            ['<C-h>'] = 'toggle_hidden',
+            ['<C-i>'] = 'toggle_ignored',
+          },
         },
       },
-    } }, -- file picker
+    }, -- file picker
     image = { enabled = true },
     lazygit = { enabled = true },
     indent = { enabled = true },
