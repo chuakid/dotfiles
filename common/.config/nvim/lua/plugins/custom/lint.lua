@@ -27,7 +27,7 @@ return {
           end
         end,
       })
-      -- auto lint on save
+      -- auto fix lint on save
       require('lspconfig').eslint.setup {
         on_attach = function(_, bufnr)
           vim.api.nvim_create_autocmd('BufWritePre', {
