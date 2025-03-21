@@ -23,17 +23,17 @@ config.window_background_opacity = 0.95
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
-		key = "v",
+		key = "s",
 		mods = "LEADER",
 		action = act.SplitVertical,
 	},
 	{
-		key = "h",
+		key = "v",
 		mods = "LEADER",
 		action = act.SplitHorizontal,
 	},
 	{
-		key = "x",
+		key = "q",
 		mods = "LEADER",
 		action = act.CloseCurrentPane({ confirm = true }),
 	},
