@@ -157,7 +157,7 @@ require('lazy').setup({
     priority = 1000,
   },
   -- import rest of plugins
-  { import = 'plugins/custom' },
+  { import = 'plugins' },
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
