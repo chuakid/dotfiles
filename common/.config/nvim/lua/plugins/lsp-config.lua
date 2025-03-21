@@ -24,6 +24,9 @@ return {
       local servers = {
         gopls = {},
         pyright = {},
+        ruff = {
+          autostart = false,
+        },
         ts_ls = {},
         eslint = {},
         lua_ls = {
