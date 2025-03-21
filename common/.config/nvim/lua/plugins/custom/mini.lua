@@ -22,5 +22,15 @@ return {
 
     require('mini.statusline').setup { use_icons = vim.g.have_nerd_font }
     require('mini.pairs').setup()
+    require('mini.indentscope').setup { symbol = '|' }
+    require('mini.hipatterns').setup {
+      highlighters = {
+        -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
+        fixme = { pattern = '%f[%w]()FIXME.*:', group = 'MiniHipatternsFixme' },
+        hack = { pattern = '%f[%w]()HACK.*:', group = 'MiniHipatternsHack' },
+        todo = { pattern = '%f[%w]()TODO.*:', group = 'MiniHipatternsTodo' },
+        note = { pattern = '%f[%w]()NOTE.*:', group = 'MiniHipatternsNote' },
+      },
+    }
   end,
 }
