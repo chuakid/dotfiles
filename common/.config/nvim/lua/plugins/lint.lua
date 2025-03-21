@@ -11,6 +11,7 @@ return {
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         python = { 'flake8' },
+        go = { 'golangcilint' },
       }
 
       -- Create autocommand which carries out the actual linting
