@@ -2,6 +2,9 @@ return {
 
   { -- Linting
     'mfussenegger/nvim-lint',
+    dependencies = {
+      'neovim/nvim-lspconfig',
+    },
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'

@@ -5,5 +5,14 @@ return {
     'nvim-lua/plenary.nvim',
     'antoinemadec/FixCursorHold.nvim',
     'nvim-treesitter/nvim-treesitter',
+    -- adapters
+    'nvim-neotest/neotest-python',
   },
+  config = function()
+    require('neotest').setup {
+      adapters = {
+        require 'neotest-python',
+      },
+    }
+  end,
 }
