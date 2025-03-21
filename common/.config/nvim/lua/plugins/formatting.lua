@@ -16,7 +16,7 @@ return { -- Autoformat
     format_on_save = { lsp_fallback = true, async = false },
     formatters_by_ft = {
       lua = { 'stylua' },
-      -- python = { 'isort', 'black' },
+      python = { 'isort', 'black' },
       javascript = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'first' },
       typescript = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'first' },
       javascriptreact = { 'prettierd', 'prettier', stop_after_first = true, lsp_format = 'first' },
