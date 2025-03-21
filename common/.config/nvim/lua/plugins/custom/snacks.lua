@@ -77,13 +77,26 @@ return {
       desc = '[S]earch [K]eymaps',
     },
     {
+      '<leader>sr',
+      function()
+        require('snacks.picker').recent()
+      end,
+      desc = '[S]earch [R]ecents',
+    },
+    {
       '<leader>sd',
       function()
-        require('snacks.picker').diagnostics_buffer()
+        require('snacks.picker').diagnostics()
       end,
       desc = '[S]earch [D]iagnostics',
     },
-
+    {
+      '<leader>q',
+      function()
+        require('snacks.picker').diagnostics_buffer()
+      end,
+      desc = 'Diagnostics in current buffer',
+    },
     -- lazygit
     {
       '<leader>lg',
