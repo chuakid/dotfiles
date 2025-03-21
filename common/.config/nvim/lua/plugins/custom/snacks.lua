@@ -21,18 +21,25 @@ return {
       desc = 'Search all files',
     },
     {
-      '<leader>sr',
+      'gd',
+      function()
+        require('snacks.picker').lsp_definitions()
+      end,
+      desc = '[G]oto [D]efinitions',
+    },
+    {
+      'gr',
       function()
         require('snacks.picker').lsp_references()
       end,
-      desc = '[S]earch [R]eferences',
+      desc = '[G]oto [R]eferences',
     },
     {
-      '<leader>si',
+      'gi',
       function()
         require('snacks.picker').lsp_implementations()
       end,
-      desc = '[S]earch [R]eferences',
+      desc = '[G]oto [I]mplementations',
     },
     {
       '<leader>sg',
@@ -65,10 +72,18 @@ return {
     {
       '<leader>sk',
       function()
-        require('snacks.picker').keymaps()()
+        require('snacks.picker').keymaps()
       end,
       desc = '[S]earch [K]eymaps',
     },
+    {
+      '<leader>sd',
+      function()
+        require('snacks.picker').diagnostics_buffer()
+      end,
+      desc = '[S]earch [D]iagnostics',
+    },
+
     -- lazygit
     {
       '<leader>lg',
