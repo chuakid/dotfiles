@@ -22,7 +22,6 @@ return {
 
     require('mini.statusline').setup { use_icons = vim.g.have_nerd_font }
     require('mini.pairs').setup()
-    require('mini.indentscope').setup { symbol = '|' }
     require('mini.hipatterns').setup {
       highlighters = {
         -- Highlight standalone 'FIXME', 'HACK', 'TODO', 'NOTE'
