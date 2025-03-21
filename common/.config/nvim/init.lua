@@ -14,6 +14,8 @@ vim.opt.relativenumber = true
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
+vim.opt.tabstop = 4
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 
@@ -61,6 +63,9 @@ vim.opt.scrolloff = 10
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
 vim.opt.confirm = true
+
+-- https://neovim.io/doc/user/options.html#'exrc'
+vim.opt.exrc = true
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
