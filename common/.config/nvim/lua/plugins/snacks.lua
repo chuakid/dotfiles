@@ -140,5 +140,6 @@ return {
     image = { enabled = true },
     lazygit = { enabled = true },
     indent = { enabled = true },
+    words = { enabled = true },
   },
 }
