@@ -18,7 +18,7 @@ return {
           multi = { 'buffers', 'files' },
         }
       end,
-      desc = 'Search all files',
+      desc = 'Smart search',
     },
     {
       'gd',
@@ -28,18 +28,32 @@ return {
       desc = '[G]oto [D]efinitions',
     },
     {
-      'gr',
+      'grr',
       function()
         require('snacks.picker').lsp_references()
       end,
       desc = '[G]oto [R]eferences',
     },
     {
-      'gi',
+      'gri',
       function()
         require('snacks.picker').lsp_implementations()
       end,
       desc = '[G]oto [I]mplementations',
+    },
+    {
+      'gO',
+      function()
+        require('snacks.picker').lsp_symbols()
+      end,
+      desc = 'Search lsp_symbols',
+    },
+    {
+      '<leader>sp',
+      function()
+        require('snacks.picker').pickers()
+      end,
+      desc = 'Search all pickers',
     },
     {
       '<leader>sg',
