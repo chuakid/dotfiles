@@ -136,6 +136,11 @@ return {
           },
         },
       },
+      sources = {
+        explorer = {
+          auto_close = true,
+        },
+      },
     }, -- file picker
     image = { enabled = true },
     lazygit = { enabled = true },

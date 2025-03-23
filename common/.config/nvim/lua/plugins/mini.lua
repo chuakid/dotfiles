@@ -31,5 +31,6 @@ return {
         note = { pattern = '%f[%w]()NOTE.*:', group = 'MiniHipatternsNote' },
       },
     }
+    require('mini.animate').setup()
   end,
 }
