@@ -156,11 +156,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-  },
+  { 'catppuccin/nvim', lazy = false, name = 'catppuccin', priority = 1000, opts = { transparent_background = true } },
   -- import rest of plugins
   { import = 'plugins' },
 }, {
@@ -183,6 +179,6 @@ require('lazy').setup({
   },
 })
 
-vim.cmd.colorscheme 'tokyonight-night'
+vim.cmd.colorscheme 'catppuccin-macchiato'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
