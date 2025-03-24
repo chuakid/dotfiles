@@ -65,8 +65,11 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 -- https://neovim.io/doc/user/options.html#'exrc'
+-- allows per project config with .nvim.lua
 vim.opt.exrc = true
 
+-- session options for auto-session
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
