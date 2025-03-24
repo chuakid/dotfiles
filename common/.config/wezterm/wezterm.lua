@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 -- styling
-config.color_scheme = "tokyonight_night"
+config.color_scheme = "Catppuccin Macchiato"
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.window_padding = {
@@ -17,7 +17,7 @@ config.inactive_pane_hsb = {
 }
 config.enable_scroll_bar = true
 config.max_fps = 165
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.98
 
 -- keys
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
