@@ -21,6 +21,10 @@ return {
     vim.keymap.set({ 'n', 'x' }, 's', '<Nop>')
 
     require('mini.statusline').setup { use_icons = vim.g.have_nerd_font }
+    ---@diagnostic disable-next-line: duplicate-set-field
+    require('mini.statusline').section_location = function()
+      return '%2l:%-2v'
+    end
     require('mini.pairs').setup()
     require('mini.hipatterns').setup {
       highlighters = {
