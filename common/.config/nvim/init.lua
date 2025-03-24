@@ -70,6 +70,11 @@ vim.opt.exrc = true
 
 -- session options for auto-session
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
+-- 0 cmd height and fix for macros not showing up
+vim.opt.cmdheight = 0
+vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
