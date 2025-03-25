@@ -33,6 +33,7 @@ return {
         hack = { pattern = '%f[%w]()HACK.*:', group = 'MiniHipatternsHack' },
         todo = { pattern = '%f[%w]()TODO.*:', group = 'MiniHipatternsTodo' },
         note = { pattern = '%f[%w]()NOTE.*:', group = 'MiniHipatternsNote' },
+        hex_color = require('mini.hipatterns').gen_highlighter.hex_color(),
       },
     }
     require('mini.sessions').setup { autoread = true }
