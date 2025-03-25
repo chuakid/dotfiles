@@ -35,5 +35,6 @@ return {
         note = { pattern = '%f[%w]()NOTE.*:', group = 'MiniHipatternsNote' },
       },
     }
+    require('mini.sessions').setup { autoread = true }
   end,
 }
