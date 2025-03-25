@@ -1,5 +1,5 @@
 return {
-
+  -- most linting is done by LSP
   { -- Linting
     'mfussenegger/nvim-lint',
     dependencies = {
@@ -9,9 +9,19 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        markdown = { 'markdownlint' },
         python = { 'flake8' },
         go = { 'golangcilint' },
+      }
+      -- HACK: temp fix until
+      -- https://github.com/mfussenegger/nvim-lint/pull/761 is merged
+      lint.linters.golangcilint.args = {
+        'run',
+        '--output.json.path=stdout',
+        '--issues-exit-code=0',
+        '--show-stats=false',
+        function()
+          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':h')
+        end,
       }
 
       -- Create autocommand which carries out the actual linting
@@ -28,16 +38,6 @@ return {
           end
         end,
       })
-      -- auto fix lint on save
-      require('lspconfig').eslint.setup {
-        on_attach = function(_, bufnr)
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            group = lint_augroup,
-            buffer = bufnr,
-            command = 'EslintFixAll',
-          })
-        end,
-      }
     end,
   },
 }
