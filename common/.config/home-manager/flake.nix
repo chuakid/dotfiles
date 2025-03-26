@@ -22,7 +22,7 @@
           };
         };
         SP13304 = home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+          pkgs = nixpkgs.legacyPackages.aarch64-darwin;
           modules = [ ./work.nix ];
           extraSpecialArgs = {
             username = "SP13304";
