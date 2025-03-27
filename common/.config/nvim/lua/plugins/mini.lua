@@ -37,5 +37,12 @@ return {
       },
     }
     require('mini.sessions').setup { autoread = true }
+    local MiniMap = require 'mini.map'
+    MiniMap.setup { integrations = {
+      MiniMap.gen_integration.gitsigns(),
+      MiniMap.gen_integration.diagnostic(),
+    } }
+    vim.keymap.set('n', '<Leader>mf', MiniMap.toggle_focus, { desc = 'Toggle Minimap Focus' })
+    vim.keymap.set('n', '<Leader>mt', MiniMap.toggle, { desc = 'Toggle Minimap' })
   end,
 }
