@@ -146,5 +146,6 @@ return {
     lazygit = { enabled = true },
     indent = { enabled = true },
     words = { enabled = true },
+    rename = { enabled = true },
   },
 }
