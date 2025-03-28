@@ -12,7 +12,7 @@ return {
         python = { 'flake8' },
         go = { 'golangcilint' },
       }
-      -- HACK: temp fix unti
+      -- HACK: temp fix until
       -- https://github.com/mfussenegger/nvim-lint/pull/761 is merged
       lint.linters.golangcilint.args = (function()
         if string.find(vim.fn.system { 'golangci-lint', 'version' }, 'version v2') then
