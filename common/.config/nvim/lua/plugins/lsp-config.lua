@@ -20,19 +20,6 @@ return {
       { 'j-hui/fidget.nvim', opts = {} },
       'saghen/blink.cmp',
     },
-    keys = {
-      { -- TODO: remove in 0.11
-        'grn',
-        vim.lsp.buf.rename,
-        desc = 'Rename',
-      },
-      { -- TODO: remove in 0.11
-        'gra',
-        vim.lsp.buf.code_action,
-        mode = { 'n', 'v' },
-        desc = 'Code Action',
-      },
-    },
     config = function()
       local servers = {
         gopls = {},
@@ -61,6 +48,7 @@ return {
         },
         cssls = {},
         tailwindcss = {},
+        nil_ls = {},
       }
       local lspconfig = require 'lspconfig'
 

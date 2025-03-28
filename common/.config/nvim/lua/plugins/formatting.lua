@@ -23,6 +23,7 @@ return { -- Autoformat
       css = { 'prettierd', 'prettier', stop_after_first = true },
       html = { 'prettierd', 'prettier', stop_after_first = true },
       go = { 'gofmt' },
+      nix = { 'nixfmt' },
     },
   },
 }
