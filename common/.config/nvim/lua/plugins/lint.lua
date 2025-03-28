@@ -12,17 +12,34 @@ return {
         python = { 'flake8' },
         go = { 'golangcilint' },
       }
-      -- HACK: temp fix until
+      -- HACK: temp fix unti
       -- https://github.com/mfussenegger/nvim-lint/pull/761 is merged
-      lint.linters.golangcilint.args = {
-        'run',
-        '--output.json.path=stdout',
-        '--issues-exit-code=0',
-        '--show-stats=false',
-        function()
-          return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':h')
-        end,
-      }
+      lint.linters.golangcilint.args = (function()
+        if string.find(vim.fn.system { 'golangci-lint', 'version' }, 'version v2') then
+          return {
+            'run',
+            '--output.json.path=stdout',
+            '--issues-exit-code=0',
+            '--show-stats=false',
+            function()
+              return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':h')
+            end,
+          }
+        else
+          return {
+            'run',
+            '--out-format',
+            'json',
+            '--issues-exit-code=0',
+            '--show-stats=false',
+            '--print-issued-lines=false',
+            '--print-linter-name=false',
+            function()
+              return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ':h')
+            end,
+          }
+        end
+      end)()
 
       -- Create autocommand which carries out the actual linting
       -- on the specified events.
