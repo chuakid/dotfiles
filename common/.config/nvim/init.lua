@@ -1,6 +1,7 @@
 --- stop messages about deprecated
 ---@diagnostic disable-next-line: duplicate-set-field
 vim.deprecate = function() end
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
