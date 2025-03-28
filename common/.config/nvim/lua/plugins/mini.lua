@@ -64,5 +64,7 @@ return {
       MiniMap.gen_integration.gitsigns(),
       MiniMap.gen_integration.diagnostic(),
     } }
+
+    require('mini.notify').setup()
   end,
 }

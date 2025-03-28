@@ -17,7 +17,6 @@ return {
       { 'williamboman/mason.nvim', opts = {} },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
       'saghen/blink.cmp',
     },
     config = function()
@@ -50,25 +49,18 @@ return {
         tailwindcss = {},
         nil_ls = {},
       }
-      local lspconfig = require 'lspconfig'
+
+      require('mason-tool-installer').setup {
+        ensure_installed = { 'stylua', 'lua_ls' },
+      }
+      require('mason-lspconfig').setup {}
 
       for server, config in pairs(servers) do
         -- passing config.capabilities to blink.cmp merges with the capabilities in your
         -- `opts[server].capabilities, if you've defined it
         config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
-        lspconfig[server].setup(config)
+        require('lspconfig')[server].setup(config)
       end
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
-      })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-
-      require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
-        automatic_installation = false,
-      }
     end,
   },
 }
