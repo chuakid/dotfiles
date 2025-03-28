@@ -48,6 +48,7 @@ return {
         cssls = {},
         tailwindcss = {},
         nil_ls = {},
+        astro = {},
       }
 
       require('mason-tool-installer').setup {
