@@ -68,9 +68,6 @@ vim.opt.confirm = true
 -- allows per project config with .nvim.lua
 vim.opt.exrc = true
 
--- session options for auto-session
-vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
-
 -- 0 cmd height and fix for macros not showing up
 vim.opt.cmdheight = 0
 vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
