@@ -22,29 +22,25 @@ setopt hist_find_no_dups
 # Case sensitive completions
 autoload -U compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
 # Highlight when tabbing through files/folders
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors 'ma=48;2;76;86;106' 
-# plugins
+
+# PLUGINS
+# https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#initialization-mode
+# fixes keybindings for fzf being overwritten by ZVM
+ZVM_INIT_MODE=sourcing
+
 for plugin_folder in $(ls ~/.zsh_plugins) 
 do
-source ~/.zsh_plugins/$plugin_folder/$plugin_folder.plugin.zsh
+  source ~/.zsh_plugins/$plugin_folder/$plugin_folder.plugin.zsh
 done
 
-# zoxide
-if command -v zoxide >/dev/null 
-then 
-  eval "$(zoxide init zsh --cmd cd)"
-fi
-
-# fzf
-if command -v fzf >/dev/null 
-then
-  source <(fzf --zsh)
-  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-  export FZF_DEFAULT_COMMAND="fd . $HOME"
-  export FZF_ALT_C_COMMAND="fd -t d . $HOME"
-fi
+# UTIL INTEGRATIONS
+command -v direnv >/dev/null && eval "$(direnv hook zsh)" 
+command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)" 
+command -v fzf >/dev/null && source <(fzf --zsh)
 
 # Powerlevel10k
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
@@ -53,16 +49,10 @@ source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 export EDITOR=nvim
 
-if command -v direnv >/dev/null
-then
- eval "$(direnv hook zsh)"
-fi
-
 # aliases
 source ~/.zsh_aliases
+
 # Local Configs
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
-
-
 
 [[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env"
