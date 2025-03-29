@@ -98,6 +98,8 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', 'H', '^', { desc = 'Go to start of line' })
 vim.keymap.set('n', 'L', '$', { desc = 'Go to end of line' })
+vim.keymap.set('n', 'J', '<C-d>', { desc = 'Down half page' })
+vim.keymap.set('n', 'K', '<C-u>', { desc = 'Up half page' })
 
 -- utility paste function
 vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
@@ -106,7 +108,7 @@ vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
   severity_sort = true,
-  float = { border = 'rounded', source = 'if_many' },
+  float = { border = 'rounded' },
   underline = { severity = vim.diagnostic.severity.ERROR },
   signs = vim.g.have_nerd_font and {
     text = {
@@ -119,15 +121,6 @@ vim.diagnostic.config {
   virtual_text = {
     source = 'if_many',
     spacing = 2,
-    format = function(diagnostic)
-      local diagnostic_message = {
-        [vim.diagnostic.severity.ERROR] = diagnostic.message,
-        [vim.diagnostic.severity.WARN] = diagnostic.message,
-        [vim.diagnostic.severity.INFO] = diagnostic.message,
-        [vim.diagnostic.severity.HINT] = diagnostic.message,
-      }
-      return diagnostic_message[diagnostic.severity]
-    end,
   },
 }
 
