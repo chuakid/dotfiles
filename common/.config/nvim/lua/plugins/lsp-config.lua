@@ -19,6 +19,14 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'saghen/blink.cmp',
     },
+    keys = {
+      {
+        'K',
+        function()
+          vim.lsp.buf.hover { border = 'rounded' }
+        end,
+      },
+    },
     config = function()
       local servers = {
         gopls = {},
