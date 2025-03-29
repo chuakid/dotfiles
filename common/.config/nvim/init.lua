@@ -98,8 +98,6 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 vim.keymap.set('n', 'H', '^', { desc = 'Go to start of line' })
 vim.keymap.set('n', 'L', '$', { desc = 'Go to end of line' })
-vim.keymap.set('n', 'J', '<C-d>', { desc = 'Down half page' })
-vim.keymap.set('n', 'K', '<C-u>', { desc = 'Up half page' })
 
 -- utility paste function
 vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
