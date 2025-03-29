@@ -96,9 +96,8 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- move to start and end of line, inspired by helix
-vim.keymap.set('n', 'gh', '^', { desc = 'Go to start of line' })
-vim.keymap.set('n', 'gl', '$', { desc = 'Go to end of line' })
+vim.keymap.set('n', 'H', '^', { desc = 'Go to start of line' })
+vim.keymap.set('n', 'L', '$', { desc = 'Go to end of line' })
 
 -- utility paste function
 vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
