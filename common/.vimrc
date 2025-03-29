@@ -123,6 +123,14 @@ set wrap "Wrap lines
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+"keybinds
+
+"shift + H or L to start or end of line
+nnoremap H ^
+nnoremap L $
+"shift + J/K to down or up half a page
+nnoremap J <C-d>
+nnoremap K <C-u>
 
 """"""""""""""""""""""""""""""
 " => Status line
