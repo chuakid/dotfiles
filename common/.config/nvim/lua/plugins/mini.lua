@@ -41,7 +41,6 @@ return {
     local MiniMap = require 'mini.map'
     MiniMap.setup {
       integrations = {
-        MiniMap.gen_integration.gitsigns(),
         MiniMap.gen_integration.diagnostic(),
       },
       symbols = { encode = MiniMap.gen_encode_symbols.dot '4x2' },
