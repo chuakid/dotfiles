@@ -2,27 +2,6 @@
 -- https://github.com/echasnovski/mini.nvim
 return {
   'echasnovski/mini.nvim',
-  -- https://lazy.folke.io/spec/lazy_loading
-  -- keys is set so need to explicitly not lazy load it
-  lazy = false,
-  keys = {
-    {
-      'n',
-      '<Leader>mf',
-      function()
-        require('mini.map').toggle_focus()
-      end,
-      desc = 'Toggle Minimap Focus',
-    },
-    {
-      'n',
-      '<Leader>mt',
-      function()
-        require('mini.map').toggle()
-      end,
-      { desc = 'Toggle Minimap' },
-    },
-  },
   config = function()
     -- Better Around/Inside textobjects
     --
@@ -60,10 +39,23 @@ return {
     require('mini.sessions').setup { autoread = true }
 
     local MiniMap = require 'mini.map'
-    MiniMap.setup { integrations = {
-      MiniMap.gen_integration.gitsigns(),
-      MiniMap.gen_integration.diagnostic(),
-    } }
+    MiniMap.setup {
+      integrations = {
+        MiniMap.gen_integration.gitsigns(),
+        MiniMap.gen_integration.diagnostic(),
+      },
+      symbols = { encode = MiniMap.gen_encode_symbols.dot '4x2' },
+      window = {
+        show_integration_count = false,
+      },
+    }
+
+    vim.keymap.set('n', '<leader>mf', function()
+      require('mini.map').toggle_focus()
+    end, { desc = 'Toggle Minimap Focus' })
+    vim.keymap.set('n', '<leader>mt', function()
+      require('mini.map').toggle()
+    end, { desc = 'Toggle Minimap' })
 
     require('mini.notify').setup()
   end,
