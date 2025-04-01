@@ -18,7 +18,7 @@ return { -- Autocompletion
   ---@type blink.cmp.Config
   opts = {
     keymap = {
-      preset = 'enter',
+      preset = 'super-tab',
     },
     snippets = { preset = 'luasnip' },
     sources = {
