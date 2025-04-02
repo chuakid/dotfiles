@@ -19,14 +19,6 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       'saghen/blink.cmp',
     },
-    keys = {
-      {
-        'K',
-        function()
-          vim.lsp.buf.hover { border = 'rounded' }
-        end,
-      },
-    },
     config = function()
       local servers = {
         gopls = {},
@@ -58,9 +50,17 @@ return {
         nil_ls = {},
         astro = {},
       }
+      vim.keymap.set('n', 'K', function()
+        vim.lsp.buf.hover { border = 'rounded' }
+      end)
+
+      local ensure_installed = vim.tbl_deep_extend('force', vim.tbl_keys(servers), {
+        'stylua',
+        'golangci-lint',
+      })
 
       require('mason-tool-installer').setup {
-        ensure_installed = { 'stylua', 'lua_ls' },
+        ensure_installed = ensure_installed,
       }
       require('mason-lspconfig').setup {}
 
