@@ -15,6 +15,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    # utils
     stow
     eza
     bat
@@ -24,18 +25,26 @@
     tlrc
     gh
     jq
-    go
     pnpm
     lazygit
     fd
     fzf
-    nixpkgs-fmt
-    nil
     direnv
     doggo
     btop
     ripgrep
 
+    # nix formatter and lsp
+    nixpkgs-fmt
+    nil
+
+    # languages
+    go
+
+    # file manager
+    yazi
+
+    # nvim
     neovim
   ];
 
