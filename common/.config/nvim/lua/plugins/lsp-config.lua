@@ -23,9 +23,6 @@ return {
       local servers = {
         gopls = {},
         pyright = {},
-        ruff = {
-          autostart = false,
-        },
         ts_ls = {},
         eslint = {
           on_attach = function(_, bufnr)
@@ -66,8 +63,8 @@ return {
       require('mason-lspconfig').setup {}
 
       for server, config in pairs(servers) do
-        vim.lsp.enable(server)
         vim.lsp.config(server, config)
+        vim.lsp.enable(server)
       end
     end,
   },
