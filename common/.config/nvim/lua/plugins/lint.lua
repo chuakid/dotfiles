@@ -9,7 +9,6 @@ return {
     config = function()
       local lint = require 'lint'
       lint.linters_by_ft = {
-        python = { 'flake8' },
         go = { 'golangcilint' },
       }
       -- Create autocommand which carries out the actual linting
