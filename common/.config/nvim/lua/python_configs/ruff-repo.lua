@@ -10,8 +10,6 @@ vim.lsp.config('pyright', {
 
 vim.lsp.enable 'ruff'
 vim.lsp.enable 'pyright'
--- disable other linters
-require('lint').linters_by_ft.python = {}
 -- set up auto formatting with ruff
 require('conform').formatters_by_ft = {
   python = {
