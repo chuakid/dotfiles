@@ -22,7 +22,7 @@ return {
     config = function()
       local servers = {
         gopls = {},
-        pyright = {},
+        basedpyright = {},
         ts_ls = {},
         eslint = {
           on_attach = function(_, bufnr)

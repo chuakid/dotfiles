@@ -1,7 +1,7 @@
 -- repos using ruff for linting and organizing imports and pyright for other things
-vim.lsp.config('pyright', {
+vim.lsp.config('basedpyright', {
   settings = {
-    pyright = {
+    basedpyright = {
       -- Using Ruff's import organizer
       disableOrganizeImports = true,
     },
