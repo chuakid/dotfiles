@@ -69,24 +69,6 @@ config.keys = {
 		mods = "ALT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
-	-- Make CTRL-Right, Option-Left equivalent to Alt-b which many line editors interpret as backward-word
-	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
-	{
-		key = "LeftArrow",
-		mods = "CTRL",
-		action = wezterm.action({ SendString = "\x1bb" }),
-	},
-	-- Make CTRL-Right, Option-Right equivalent to Alt-f; forward-word
-	{
-		key = "RightArrow",
-		mods = "OPT",
-		action = wezterm.action({ SendString = "\x1bf" }),
-	},
-	{
-		key = "RightArrow",
-		mods = "CTRL",
-		action = wezterm.action({ SendString = "\x1bf" }),
-	},
 }
 
 config.unix_domains = {
