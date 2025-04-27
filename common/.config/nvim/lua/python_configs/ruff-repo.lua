@@ -4,12 +4,12 @@ vim.lsp.config('basedpyright', {
     basedpyright = {
       -- Using Ruff's import organizer
       disableOrganizeImports = true,
+      typeCheckingMode = 'basic',
     },
   },
 })
 
 vim.lsp.enable 'ruff'
-vim.lsp.enable 'pyright'
 -- set up auto formatting with ruff
 require('conform').formatters_by_ft = {
   python = {
