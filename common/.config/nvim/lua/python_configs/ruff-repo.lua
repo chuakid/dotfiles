@@ -4,7 +4,7 @@ vim.lsp.config('basedpyright', {
     basedpyright = {
       -- Using Ruff's import organizer
       disableOrganizeImports = true,
-      typeCheckingMode = 'basic',
+      typeCheckingMode = 'standard',
     },
   },
 })
