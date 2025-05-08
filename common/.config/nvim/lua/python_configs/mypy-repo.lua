@@ -1,21 +1,16 @@
 -- repos using ruff for linting and organizing imports and pyright for other things
-vim.lsp.config('pyright', {
+vim.lsp.config('basedpyright', {
   settings = {
-    pyright = {
+    basedpyright = {
       -- Using Ruff's import organizer
       disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-      },
+      typeCheckingMode = 'standard',
     },
   },
 })
 
-vim.lsp.enable 'pyright'
 vim.lsp.enable 'ruff'
+require('lint').linters_by_ft.python = { 'mypy' }
 -- set up auto formatting with ruff
 require('conform').formatters_by_ft = {
   python = {
