@@ -24,6 +24,7 @@ return { -- Autoformat
       html = { 'prettierd', 'prettier', stop_after_first = true },
       go = { 'gofmt' },
       nix = { 'nixfmt' },
+      json = { 'jq' },
     },
   },
 }

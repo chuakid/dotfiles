@@ -46,6 +46,7 @@ return {
         tailwindcss = {},
         nil_ls = {},
         astro = {},
+        jsonls = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
