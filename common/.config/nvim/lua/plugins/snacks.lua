@@ -146,6 +146,7 @@ return {
       sources = {
         explorer = {
           auto_close = true,
+          ignored = true,
         },
       },
     }, -- file picker
