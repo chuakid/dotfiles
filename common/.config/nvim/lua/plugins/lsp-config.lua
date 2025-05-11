@@ -25,12 +25,9 @@ return {
         basedpyright = {},
         ts_ls = {},
         eslint = {
-          on_attach = function(_, bufnr)
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              buffer = bufnr,
-              command = 'EslintFixAll',
-            })
-          end,
+          settings = {
+            autoFixOnSave = true,
+          },
         },
         lua_ls = {
           settings = {
@@ -47,6 +44,7 @@ return {
         nil_ls = {},
         astro = {},
         jsonls = {},
+        html = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
