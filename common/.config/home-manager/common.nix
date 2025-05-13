@@ -33,6 +33,7 @@
     doggo
     btop
     ripgrep
+    git
 
     # nix formatter and lsp
     nixpkgs-fmt
