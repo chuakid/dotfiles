@@ -63,11 +63,11 @@ return {
       desc = '[S]earch [G]rep',
     },
     {
-      '<leader>sws',
+      '<leader>sw',
       function()
         require('snacks.picker').lsp_workspace_symbols()
       end,
-      desc = '[S]earch [W]orkspace [S]ymbols',
+      desc = '[S]earch [W]orkspace',
     },
     {
       '<leader>sf',
@@ -82,13 +82,6 @@ return {
         require('snacks.picker').help()
       end,
       desc = '[S]earch [H]elp',
-    },
-    {
-      '<leader>sj',
-      function()
-        require('snacks.picker').jumps()
-      end,
-      desc = '[S]earch [J]umps',
     },
     {
       '<leader>sk',
