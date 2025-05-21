@@ -102,6 +102,8 @@ vim.keymap.set('n', 'L', '$', { desc = 'Go to end of line' })
 -- utility paste function
 vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
 
+vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
