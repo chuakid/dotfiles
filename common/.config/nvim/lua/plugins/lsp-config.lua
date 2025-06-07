@@ -45,6 +45,7 @@ return {
         astro = {},
         jsonls = {},
         html = {},
+        dockerls = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
