@@ -34,6 +34,7 @@
     btop
     ripgrep
     git
+    gcc
 
     # nix formatter and lsp
     nixpkgs-fmt
