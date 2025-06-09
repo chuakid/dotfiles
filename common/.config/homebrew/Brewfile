@@ -1,0 +1,28 @@
+# utils
+brew "stow"
+brew "eza"
+brew "bat"
+brew "delta"
+brew "tmux"
+brew "zoxide"
+brew "tlrc"
+brew "gh"
+brew "jq"
+brew "pnpm"
+brew "lazygit"
+brew "fd"
+brew "fzf"
+brew "direnv"
+brew "doggo"
+brew "btop"
+brew "ripgrep"
+brew "git"
+
+# languages
+brew "go"
+
+# file manager
+brew "yazi"
+
+# nvim
+brew "neovim"
