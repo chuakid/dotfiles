@@ -17,6 +17,7 @@ brew "doggo"
 brew "btop"
 brew "ripgrep"
 brew "git"
+brew "gcc"
 
 # languages
 brew "go"
