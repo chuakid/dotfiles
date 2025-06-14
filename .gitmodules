@@ -16,6 +16,3 @@
 [submodule "common/.zsh_plugins/zsh-completions"]
 	path = common/.zsh_plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "common/.zsh_plugins/zsh-vi-mode"]
-	path = common/.zsh_plugins/zsh-vi-mode
-	url = https://github.com/jeffreytse/zsh-vi-mode
