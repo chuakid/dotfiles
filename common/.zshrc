@@ -26,11 +26,11 @@ setopt hist_find_no_dups
 
 # Case sensitive completions
 autoload -U compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+# zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Highlight when tabbing through files/folders
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors 'ma=48;2;76;86;106' 
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' list-colors 'ma=48;2;76;86;106' 
 
 for plugin_folder in $(ls ~/.zsh_plugins) 
 do

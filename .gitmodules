@@ -19,3 +19,6 @@
 [submodule "common/.zsh_plugins/zsh-abbr"]
 	path = common/.zsh_plugins/zsh-abbr
 	url = https://github.com/olets/zsh-abbr
+[submodule "common/.zsh_plugins/fzf-tab"]
+	path = common/.zsh_plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
