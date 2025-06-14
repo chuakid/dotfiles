@@ -69,11 +69,19 @@ config.keys = {
 		mods = "ALT",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
-}
-
-config.unix_domains = {
+	-- alt + left right to move between words
 	{
-		name = "default",
+		key = "LeftArrow",
+		mods = "OPT",
+		action = act.SendKey({
+			key = "b",
+			mods = "ALT",
+		}),
+	},
+	{
+		key = "RightArrow",
+		mods = "OPT",
+		action = act.SendKey({ key = "f", mods = "ALT" }),
 	},
 }
 
