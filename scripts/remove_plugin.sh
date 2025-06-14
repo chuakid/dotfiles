@@ -6,9 +6,9 @@ if [ "$#" -ne 1 ]; then
 fi
 
 PLUGIN_NAME=$1
-PLUGIN_DIR="$PWD/common/.zsh_plugins"
+PLUGIN_DIR="common/.zsh_plugins"
 
-git rm "$PLUGIN_DIR/$PLUGIN_NAME" || {
+git rm --cached "$PLUGIN_DIR/$PLUGIN_NAME" -f || {
 	echo "Failed to remove plugin $PLUGIN_NAME"
 	exit 1
 }

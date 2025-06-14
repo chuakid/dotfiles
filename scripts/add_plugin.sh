@@ -7,7 +7,7 @@ fi
 
 PLUGIN_URL=$1
 PLUGIN_NAME=$(basename "$PLUGIN_URL" .git)
-PLUGIN_DIR="$PWD/common/.zsh_plugins"
+PLUGIN_DIR="common/.zsh_plugins"
 
 git submodule add "$PLUGIN_URL" "$PLUGIN_DIR/$PLUGIN_NAME" || {
 	echo "Failed to add plugin $PLUGIN_NAME"
