@@ -1,24 +1,12 @@
 [submodule "mpv/.config/mpv/scripts/mpvacious"]
 	path = mpv/.config/mpv/scripts/mpvacious
 	url = https://github.com/Ajatt-Tools/mpvacious.git
-[submodule "common/.zsh_plugins/fast-syntax-highlighting"]
-	path = common/.zsh_plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma-continuum/fast-syntax-highlighting.git
-[submodule "common/.zsh_plugins/zsh-autosuggestions"]
-	path = common/.zsh_plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "common/.powerlevel10k"]
 	path = common/.powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "common/.config/tmux/plugins/catppuccin"]
 	path = common/.config/tmux/plugins/catppuccin
 	url = https://github.com/catppuccin/tmux.git
-[submodule "common/.zsh_plugins/zsh-completions"]
-	path = common/.zsh_plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
-[submodule "common/.zsh_plugins/zsh-abbr"]
-	path = common/.zsh_plugins/zsh-abbr
-	url = https://github.com/olets/zsh-abbr
-[submodule "common/.zsh_plugins/fzf-tab"]
-	path = common/.zsh_plugins/fzf-tab
-	url = https://github.com/Aloxaf/fzf-tab
+[submodule "common/.config/zsh/antidote"]
+	path = common/.config/zsh/antidote
+	url = https://github.com/mattmc3/antidote.git

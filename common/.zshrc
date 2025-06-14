@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+source $ZDOTDIR/antidote/antidote.zsh
+antidote load
+
 
 PATH="$PATH:~/.local/bin"
 # History settings
@@ -28,10 +32,6 @@ autoload -U compinit && compinit
 # zstyle ':completion:*' menu select
 # zstyle ':completion:*' list-colors 'ma=48;2;76;86;106' 
 
-for plugin_folder in $(ls ~/.zsh_plugins) 
-do
-  source ~/.zsh_plugins/$plugin_folder/$plugin_folder.plugin.zsh
-done
 
 # UTIL INTEGRATIONS
 command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)" 
