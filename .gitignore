@@ -1,3 +1,5 @@
 .vscode
 .idea
 .netrwhist
+.zcompdump
+.zsh_plugins.zsh
