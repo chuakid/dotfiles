@@ -32,11 +32,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors 'ma=48;2;76;86;106' 
 
-# PLUGINS
-# https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#initialization-mode
-# fixes keybindings for fzf being overwritten by ZVM
-ZVM_INIT_MODE=sourcing
-
 for plugin_folder in $(ls ~/.zsh_plugins) 
 do
   source ~/.zsh_plugins/$plugin_folder/$plugin_folder.plugin.zsh
