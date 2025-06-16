@@ -3,20 +3,14 @@ final_space = true
 
 [palette]
 blue = '#8AADF4'
-closer = 'p:os'
 lavender = '#B7BDF8'
 os = '#ACB0BE'
 pink = '#F5BDE6'
+yellow = '#df8e1d'
 
 [[blocks]]
 type = 'prompt'
 alignment = 'left'
-
-[[blocks.segments]]
-template = '{{.Icon}} '
-foreground = 'p:os'
-type = 'os'
-style = 'plain'
 
 [[blocks.segments]]
 template = '{{ .Path }} '
@@ -25,9 +19,8 @@ type = 'path'
 style = 'plain'
 
 [blocks.segments.properties]
-folder_icon = '....'
 home_icon = '~'
-style = 'agnoster_short'
+style = 'full'
 
 [[blocks.segments]]
 foreground = 'p:lavender'
@@ -45,6 +38,13 @@ no_commits_icon = ' '
 rebase_icon = ' '
 revert_icon = ' '
 tag_icon = ' '
+template = '{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} {{ if .Upstream }}{{ if .Upstream.Behind }} \uF3A3 {{ .Upstream.Behind }}{{ end }}{{ if .Upstream.Ahead }} \uF3A2 {{ .Upstream.Ahead }}{{ end }}{{ end }}'
+
+[[blocks.segments]]
+type = "python"
+style = "plain"
+foreground = "p:yellow"
+template = "  {{ .Venv }} "
 
 [[blocks]]
 type = 'prompt'
@@ -53,9 +53,14 @@ newline = true
 
 [[blocks.segments]]
 template = ''
-foreground = 'p:closer'
+foreground = 'p:pink'
 type = 'status'
 style = 'plain'
 
 [blocks.segments.properties]
 always_enabled = true
+
+[transient_prompt]
+background = "transparent"
+# template = "{{now | date \"15:04:05\"}}  "
+template = " "
