@@ -13,7 +13,7 @@ type = 'prompt'
 alignment = 'left'
 
 [[blocks.segments]]
-template = '{{ .Path }} '
+template = '{{ .Path }}'
 foreground = 'p:blue'
 type = 'path'
 style = 'plain'
@@ -38,7 +38,7 @@ no_commits_icon = ' '
 rebase_icon = ' '
 revert_icon = ' '
 tag_icon = ' '
-template = '{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} {{ if .Upstream }}{{ if .Upstream.Behind }} \uF3A3 {{ .Upstream.Behind }}{{ end }}{{ if .Upstream.Ahead }} \uF3A2 {{ .Upstream.Ahead }}{{ end }}{{ end }}'
+template = '{{ .HEAD }}{{if .BranchStatus }}{{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }} {{ if .Upstream }}{{ if .Upstream.Behind }} \ueaa1 {{ .Upstream.Behind }}{{ end }}{{ if .Upstream.Ahead }} \uea9a {{ .Upstream.Ahead }}{{ end }}{{ end }}'
 
 [[blocks.segments]]
 type = "python"
