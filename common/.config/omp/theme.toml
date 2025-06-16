@@ -30,7 +30,6 @@ home_icon = '~'
 style = 'agnoster_short'
 
 [[blocks.segments]]
-template = '{{ .HEAD }} '
 foreground = 'p:lavender'
 type = 'git'
 style = 'plain'
@@ -39,7 +38,7 @@ style = 'plain'
 branch_icon = ' '
 cherry_pick_icon = ' '
 commit_icon = ' '
-fetch_status = false
+fetch_status = true
 fetch_upstream_icon = false
 merge_icon = ' '
 no_commits_icon = ' '
