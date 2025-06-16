@@ -46,6 +46,7 @@ return {
         jsonls = {},
         html = {},
         dockerls = {},
+        taplo = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
