@@ -35,6 +35,7 @@
     ripgrep
     git
     gcc
+    oh-my-posh
 
     # nix formatter and lsp
     nixpkgs-fmt
