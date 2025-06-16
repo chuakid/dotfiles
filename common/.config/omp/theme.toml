@@ -28,6 +28,7 @@ type = 'git'
 style = 'plain'
 
 [blocks.segments.properties]
+branch_identical_icon = ''
 branch_icon = ' '
 cherry_pick_icon = ' '
 commit_icon = ' '
