@@ -17,18 +17,23 @@ return { -- Autocompletion
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    keymap = {
-      preset = 'super-tab',
-    },
     snippets = { preset = 'luasnip' },
     sources = {
-      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'minuet' },
       providers = {
         lazydev = {
           name = 'LazyDev',
           module = 'lazydev.integrations.blink',
           -- make lazydev completions top priority (see `:h blink.cmp`)
-          score_offset = 100,
+        },
+        minuet = {
+          name = 'minuet',
+          module = 'minuet.blink',
+          async = true,
+          -- Should match minuet.config.request_timeout * 1000,
+          -- since minuet.config.request_timeout is in seconds
+          timeout_ms = 3000,
+          score_offset = 50, -- Gives minuet higher priority among suggestions
         },
       },
     },
