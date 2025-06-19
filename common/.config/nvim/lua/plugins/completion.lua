@@ -17,6 +17,9 @@ return { -- Autocompletion
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
+    keymap = {
+      preset = 'super-tab',
+    },
     snippets = { preset = 'luasnip' },
     sources = {
       default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'minuet' },
