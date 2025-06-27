@@ -7,6 +7,7 @@ lavender = '#B7BDF8'
 os = '#ACB0BE'
 pink = '#F5BDE6'
 yellow = '#df8e1d'
+green = '#40a02b'
 
 [[blocks]]
 type = 'prompt'
@@ -53,8 +54,8 @@ alignment = 'left'
 newline = true
 
 [[blocks.segments]]
-template = ''
-foreground = 'p:pink'
+template = ''
+foreground = 'p:green'
 type = 'status'
 style = 'plain'
 
@@ -64,4 +65,4 @@ always_enabled = true
 [transient_prompt]
 background = "transparent"
 # template = "{{now | date \"15:04:05\"}}  "
-template = " "
+template = " "
