@@ -62,6 +62,21 @@ style = 'plain'
 [blocks.segments.properties]
 always_enabled = true
 
+
+[[blocks]]
+type = 'rprompt'
+alignment = 'right'
+[[blocks.segments]]
+type = "executiontime"
+foreground = "#ffffff"
+# background = "#8800dd"
+template = "  {{ .FormattedMs }} "
+
+[blocks.segments.properties]
+threshold = 500
+style = "austin"
+always_enabled = true
+
 [transient_prompt]
 background = "transparent"
 # template = "{{now | date \"15:04:05\"}}  "
