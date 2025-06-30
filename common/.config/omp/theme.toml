@@ -54,7 +54,7 @@ alignment = 'left'
 newline = true
 
 [[blocks.segments]]
-template = ''
+template = '>'
 foreground = 'p:green'
 type = 'status'
 style = 'plain'
@@ -65,4 +65,4 @@ always_enabled = true
 [transient_prompt]
 background = "transparent"
 # template = "{{now | date \"15:04:05\"}}  "
-template = " "
+template = "> "
