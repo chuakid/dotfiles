@@ -6,7 +6,7 @@ if command -v tmux >/dev/null
 
 # Eza
 if command -v eza >/dev/null
- then
+then
      alias ls=eza
      alias ll='eza -lg --icons="auto" --git'
      alias tree='eza -T'
@@ -17,7 +17,7 @@ if command -v eza >/dev/null
 if command -v bat >/dev/null
  then
     alias cat=bat
- fi
+fi
 
 # Git
 alias g=git
@@ -36,3 +36,6 @@ alias title="wezterm cli set-tab-title"
 
 # nvim
 alias n=nvim
+
+# copy last command into pbcopy
+alias fccopy="fc -ln -1 | pbcopy"
