@@ -24,11 +24,11 @@ return {
         gopls = {},
         basedpyright = {},
         ts_ls = {},
-        eslint = {
-          settings = {
-            autoFixOnSave = true,
-          },
-        },
+        -- eslint = {
+        --   settings = {
+        --     autoFixOnSave = true,
+        --   },
+        -- },
         lua_ls = {
           settings = {
             Lua = {
@@ -47,6 +47,7 @@ return {
         html = {},
         dockerls = {},
         taplo = {},
+        biome = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
