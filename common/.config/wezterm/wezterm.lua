@@ -19,6 +19,8 @@ config.enable_scroll_bar = true
 config.max_fps = 165
 config.window_background_opacity = 0.98
 config.hide_tab_bar_if_only_one_tab = true
+config.default_cursor_style = "BlinkingBlock"
+config.cursor_blink_rate = 1000
 
 -- keys
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
