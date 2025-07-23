@@ -7,6 +7,16 @@ vim.deprecate = function() end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- cursor blinking
+vim.opt.guicursor = {
+  -- Normal, Visual, Command-line mode: block cursor, with blinking
+  'n-v-c:block-blinkwait700-blinkon400-blinkoff250',
+  -- Insert, Command-line Insert mode: vertical bar, with blinking
+  'i-ci:ver25-blinkwait700-blinkon400-blinkoff250',
+  -- Replace, Command-line Replace, Operator pending mode: horizontal bar, with blinking
+  'r-cr-o:hor20-blinkwait700-blinkon400-blinkoff250',
+}
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
