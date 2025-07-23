@@ -15,4 +15,20 @@ return {
       default_mappings = true,
     },
   },
+  {
+    'sphamba/smear-cursor.nvim',
+    opts = {
+      -- Smear cursor when switching buffers or windows.
+      smear_between_buffers = true,
+
+      -- Draw the smear in buffer space instead of screen space when scrolling
+      scroll_buffer_space = true,
+
+      -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
+      -- Smears will blend better on all backgrounds.
+      legacy_computing_symbols_support = true,
+
+      smear_insert_mode = false,
+    },
+  },
 }
