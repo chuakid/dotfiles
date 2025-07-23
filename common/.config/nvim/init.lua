@@ -157,9 +157,12 @@ require('lazy').setup({
     lazy = false,
     name = 'catppuccin',
     priority = 1000,
-    opts = { transparent_background = true, styles = {
-      functions = { 'italic' },
-    } },
+    opts = {
+      transparent_background = true,
+      styles = {
+        functions = { 'italic' },
+      },
+    },
   },
   -- import rest of plugins
   { import = 'plugins' },
@@ -183,6 +186,6 @@ require('lazy').setup({
   },
 })
 
-vim.cmd.colorscheme 'catppuccin-macchiato'
+vim.cmd.colorscheme 'catppuccin-mocha'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
