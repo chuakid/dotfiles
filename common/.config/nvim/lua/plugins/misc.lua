@@ -29,6 +29,8 @@ return {
       legacy_computing_symbols_support = true,
 
       smear_insert_mode = false,
+
+      smear_time_interval = 7,
     },
   },
 }
