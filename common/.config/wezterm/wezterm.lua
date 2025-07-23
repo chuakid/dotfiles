@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local act = wezterm.action
 
 -- styling
-config.color_scheme = "Catppuccin Macchiato"
+config.color_scheme = "Catppuccin Mocha"
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.window_padding = {
