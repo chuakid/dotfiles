@@ -37,10 +37,6 @@
     gcc
     oh-my-posh
 
-    # nix formatter and lsp
-    nixpkgs-fmt
-    nil
-
     # languages
     go
 
