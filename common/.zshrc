@@ -2,6 +2,7 @@ eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.toml)"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 source $ZDOTDIR/antidote/antidote.zsh
 antidote load
+bindkey -v
 
 
 PATH="$PATH:~/.local/bin"
