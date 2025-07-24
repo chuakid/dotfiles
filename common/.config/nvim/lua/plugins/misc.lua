@@ -31,6 +31,7 @@ return {
       smear_insert_mode = false,
 
       smear_time_interval = 7,
+      damping = 1,
     },
   },
 }
