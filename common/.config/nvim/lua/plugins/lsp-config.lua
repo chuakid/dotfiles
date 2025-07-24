@@ -56,7 +56,6 @@ return {
       local ensure_installed = vim.tbl_deep_extend('force', vim.tbl_keys(servers), {
         'stylua',
         'golangci-lint',
-        'flake8',
       })
 
       require('mason-tool-installer').setup {
