@@ -48,6 +48,7 @@ return {
         dockerls = {},
         taplo = {},
         biome = {},
+        tinymist = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
