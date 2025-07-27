@@ -49,6 +49,7 @@ return {
         taplo = {},
         biome = {},
         tinymist = {},
+        rust_analyzer = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
