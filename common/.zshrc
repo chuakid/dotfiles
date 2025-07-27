@@ -1,4 +1,4 @@
-eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.yaml)"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 source $ZDOTDIR/antidote/antidote.zsh
 antidote load

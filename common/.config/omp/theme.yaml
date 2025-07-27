@@ -1,0 +1,51 @@
+version: 3
+final_space: true
+palette:
+  blue: "#8AADF4"
+  lavender: "#B7BDF8"
+  os: "#ACB0BE"
+  pink: "#F5BDE6"
+  yellow: "#df8e1d"
+  green: "#40a02b"
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - template: "{{ .Path }}"
+        foreground: p:blue
+        type: path
+        style: plain
+        properties:
+          home_icon: "~"
+          style: full
+      - foreground: p:lavender
+        type: git
+        style: plain
+        properties:
+          branch_identical_icon: ""
+          branch_icon: " "
+          cherry_pick_icon: " "
+          commit_icon: " "
+          fetch_status: true
+          fetch_upstream_icon: false
+          merge_icon: " "
+          no_commits_icon: " "
+          rebase_icon: " "
+          revert_icon: " "
+          tag_icon: " "
+      - type: python
+        style: plain
+        foreground: p:yellow
+        template: "  {{ .Venv }} "
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+      - type: session
+        style: plain
+        powerline_symbol: ""
+        foreground: p:blue
+        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }}❯"
+transient_prompt:
+  background: transparent
+  template: "❯ "
