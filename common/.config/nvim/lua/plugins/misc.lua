@@ -31,23 +31,44 @@ return {
       vim.keymap.set('n', '<C-\\>', require('smart-splits').move_cursor_previous)
     end,
   },
-  -- {
-  --   'sphamba/smear-cursor.nvim',
-  --   opts = {
-  --     -- Smear cursor when switching buffers or windows.
-  --     smear_between_buffers = true,
-  --
-  --     -- Draw the smear in buffer space instead of screen space when scrolling
-  --     scroll_buffer_space = true,
-  --
-  --     -- Set to `true` if your font supports legacy computing symbols (block unicode symbols).
-  --     -- Smears will blend better on all backgrounds.
-  --     legacy_computing_symbols_support = true,
-  --
-  --     smear_insert_mode = false,
-  --
-  --     smear_time_interval = 7,
-  --     damping = 1,
-  --   },
-  -- },
+  --- docstring generation
+  {
+    'danymat/neogen',
+    config = true,
+    opts = {
+      languages = {
+        python = {
+          template = {
+            -- annotation_convention = 'reST',
+          },
+        },
+      },
+    },
+    keys = {
+      {
+        '<leader>d',
+        function()
+          require('neogen').generate()
+        end,
+      },
+    },
+  },
+  --- git integration
+  {
+    'lewis6991/gitsigns.nvim',
+    opts = {
+      current_line_blame = true,
+      current_line_blame_opts = {
+        delay = 200,
+      },
+    },
+    keys = {
+      {
+        '<leader>hb',
+        function()
+          require('gitsigns').blame_line()
+        end,
+      },
+    },
+  },
 }
