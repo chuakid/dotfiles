@@ -71,6 +71,7 @@ return {
       },
     },
   },
+  --- search and replace
   {
     'nvim-pack/nvim-spectre',
     keys = {
