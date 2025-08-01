@@ -64,9 +64,9 @@ return {
     },
     keys = {
       {
-        '<leader>hb',
+        '<leader>hr',
         function()
-          require('gitsigns').blame_line()
+          require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
         end,
       },
     },
