@@ -107,6 +107,11 @@ vim.keymap.set('n', 'yp', '"0p', { desc = 'Paste from yank register' })
 
 vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 
+-- tab stops
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
 -- Diagnostic Config
 -- See :help vim.diagnostic.Opts
 vim.diagnostic.config {
@@ -153,8 +158,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
   {
     'catppuccin/nvim',
     lazy = false,

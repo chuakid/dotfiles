@@ -24,11 +24,6 @@ return {
         gopls = {},
         basedpyright = {},
         ts_ls = {},
-        -- eslint = {
-        --   settings = {
-        --     autoFixOnSave = true,
-        --   },
-        -- },
         lua_ls = {
           settings = {
             Lua = {
@@ -41,24 +36,23 @@ return {
         },
         cssls = {},
         tailwindcss = {},
-        nil_ls = {},
+        nil_ls = {}, -- nix
         astro = {},
         jsonls = {},
         html = {},
         dockerls = {},
-        taplo = {},
+        taplo = {}, -- toml
         biome = {},
-        tinymist = {},
+        tinymist = {}, -- typst
         rust_analyzer = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
       end)
 
-      local ensure_installed = vim.tbl_deep_extend('force', vim.tbl_keys(servers), {
+      local ensure_installed = {
         'stylua',
-        'golangci-lint',
-      })
+      }
 
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,
