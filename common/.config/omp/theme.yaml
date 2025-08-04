@@ -5,7 +5,7 @@ palette:
   lavender: "#B7BDF8"
   os: "#ACB0BE"
   pink: "#F5BDE6"
-  yellow: "#df8e1d"
+  yellow: "#f9e2af"
   green: "#40a02b"
 blocks:
   - type: prompt
