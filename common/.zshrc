@@ -4,7 +4,7 @@ source $ZDOTDIR/antidote/antidote.zsh
 antidote load
 
 
-PATH="$PATH:~/.local/bin"
+PATH="$PATH:$HOME/.local/bin"
 # History settings
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
