@@ -18,6 +18,8 @@ blocks:
         properties:
           home_icon: "~"
           style: full
+          mapped_locations:
+            /var/home: "~"
       - foreground: p:lavender
         type: git
         style: plain
