@@ -79,6 +79,8 @@ dnf_apps=(
     discord
     qbittorrent
     wezterm
+    lutris
+    steam
 )
 color_echo "yellow" "Installing  apps ${dnf_apps[@]}"
 dnf install -y ${dnf_apps[@]}
