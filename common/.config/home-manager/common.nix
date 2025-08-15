@@ -46,10 +46,13 @@
     # nvim
     neovim
 
+    # curl manager
     hurl
 
     cargo
     rustc
+
+    uv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
