@@ -54,15 +54,16 @@ return {
         'stylua',
       }
 
+      for server, config in pairs(servers) do
+        vim.lsp.config(server, config)
+        vim.lsp.enable(server)
+        table.insert(ensure_installed, server)
+      end
+
       require('mason-tool-installer').setup {
         ensure_installed = ensure_installed,
       }
       require('mason-lspconfig').setup {}
-
-      for server, config in pairs(servers) do
-        vim.lsp.config(server, config)
-        vim.lsp.enable(server)
-      end
     end,
   },
 }
