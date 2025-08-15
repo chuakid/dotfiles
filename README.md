@@ -1,5 +1,9 @@
 # Dotfiles
 
+## Prerequisites
+1. zsh
+2. stow
+
 ## Description
 
 Kelvin's dotfiles, powered by Nix.
