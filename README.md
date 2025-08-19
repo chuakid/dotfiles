@@ -17,5 +17,5 @@ Kelvin's dotfiles, powered by Nix.
 ## Additional
 
 - stow mpv if needed
-- `~/.zshrc_local` and `.gitconfig_local` are sourced, meant for per-machine customisations
+- `$ZDOTDIR/.zshrc_local` and `.gitconfig_local` are sourced, meant for per-machine customisations
 - run `abbr import-aliases` to import the aliases as abbrs
