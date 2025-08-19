@@ -1,5 +1,4 @@
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.yaml)"
-export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 source $ZDOTDIR/antidote/antidote.zsh
 antidote load
 
@@ -35,9 +34,9 @@ command -v fzf >/dev/null && source <(fzf --zsh)
 export EDITOR=nvim
 
 # aliases
-source ~/.zsh_aliases
+source $ZDOTDIR/.zsh_aliases
 
 # Local Configs
-[[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
+[[ ! -f $ZDOTDIR/.zshrc_local ]] || source $ZDOTDIR/.zshrc_local
 
 [[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env"
