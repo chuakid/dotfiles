@@ -38,7 +38,7 @@ blocks:
       - type: python
         style: plain
         foreground: p:yellow
-        template: "  {{ .Venv }} "
+        template: " {{ .Venv }} "
   - type: prompt
     alignment: left
     newline: true
