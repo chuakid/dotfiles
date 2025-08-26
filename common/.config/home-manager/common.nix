@@ -35,6 +35,8 @@
     ripgrep
     git
     gcc
+    mtr
+
     oh-my-posh
 
     # languages
