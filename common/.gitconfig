@@ -10,10 +10,10 @@
     conflictstyle = zdiff3
 [credential "https://github.com"]
 	helper = 
-	helper = !/home/kelvin/.nix-profile/bin/gh auth git-credential
+	helper = !~/.nix-profile/bin/gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/home/kelvin/.nix-profile/bin/gh auth git-credential
+	helper = !~/.nix-profile/bin/gh auth git-credential
 [include]
     path = ~/.gitconfig_local
 [push]
