@@ -1,3 +1,4 @@
+bindkey -v
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.yaml)"
 source $ZDOTDIR/antidote/antidote.zsh
 antidote load
