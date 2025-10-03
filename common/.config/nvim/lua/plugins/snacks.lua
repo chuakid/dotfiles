@@ -105,6 +105,13 @@ return {
       desc = '[S]earch [D]iagnostics',
     },
     {
+      '<leader>sj',
+      function()
+        require('snacks.picker').jumps()
+      end,
+      desc = '[S]earch [J]umplist',
+    },
+    {
       '<leader>q',
       function()
         require('snacks.picker').diagnostics_buffer()
