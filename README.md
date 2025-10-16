@@ -16,7 +16,12 @@ Kelvin's dotfiles, powered by Nix.
 
 ## Additional
 
+### ZSH
+
 - `$ZDOTDIR` is set to `$HOME/.config/zsh`
 - stow mpv if needed
 - `$ZDOTDIR/.zshrc_local` and `.gitconfig_local` are sourced, meant for per-machine customisations
 - run `abbr import-aliases` to import the aliases as abbrs
+
+### Fish
+- Run "fish_update_completions" to update completions from manpages
