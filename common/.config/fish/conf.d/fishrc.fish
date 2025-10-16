@@ -11,7 +11,7 @@ set -x EDITOR nvim
 
 # Zoxide
 if type -q zoxide
-    zoxide init fish | source
+    zoxide init fish --cmd cd | source
 end
 
 # FZF
@@ -22,11 +22,6 @@ end
 # Direnv
 if type -q direnv
     direnv hook fish | source
-end
-
-# The last line remains similar, just converted to Fish syntax:
-if test -f "$HOME/.local/bin/env"
-    source "$HOME/.local/bin/env"
 end
 
 set theme_color_scheme "Catppuccin Mocha"
