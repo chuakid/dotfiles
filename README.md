@@ -24,4 +24,5 @@ Kelvin's dotfiles, powered by Nix.
 
 ### Fish
 - Run "fish_update_completions" to update completions from manpages
+- Machine specific goes into `~/.config/fish/config.fish`
 
