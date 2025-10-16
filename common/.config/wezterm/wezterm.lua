@@ -76,4 +76,37 @@ smart_splits.apply_to_config(config, {
 		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
 	},
 })
+
+local function cmd_exists(cmd)
+	local f = io.popen("which " .. cmd)
+	if f then
+		local path = f:read("*a")
+		f:close()
+		return path ~= ""
+	end
+	return false
+end
+
+-- Define the order of shells you prefer
+local shells = {
+	{ "fish", "-l" },
+	{ "zsh", "-l" },
+	{ "bash", "-l" },
+}
+
+-- Find the first available shell in the list
+local found_shell = nil
+for _, shell_pair in ipairs(shells) do
+	if cmd_exists(shell_pair[1]) then
+		found_shell = shell_pair
+		break
+	end
+end
+
+-- Set the default_prog to the first available shell,
+-- or fall back to the system's default
+if found_shell then
+	config.default_prog = found_shell
+end
+
 return config
