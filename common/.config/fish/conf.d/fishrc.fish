@@ -27,3 +27,5 @@ end
 if test -f "$HOME/.local/bin/env"
     source "$HOME/.local/bin/env"
 end
+
+set theme_color_scheme "Catppuccin Mocha"
