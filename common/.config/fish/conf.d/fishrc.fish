@@ -3,8 +3,8 @@ fish_vi_key_bindings
 
 # 🗃️ PATH and Environment Variables
 # Use 'set -x' to export variables in Fish.
-set -x PATH $PATH $HOME/.local/bin
-set -x EDITOR nvim
+fish_add_path $HOME/.local/bin
+set -gx EDITOR nvim
 
 # ⚙️ UTIL INTEGRATIONS
 # Use 'status is-command' or 'type -q' to check if a command exists.
