@@ -1,4 +1,5 @@
 oh-my-posh init fish --config $HOME/.config/omp/theme.yaml | source
+fish_vi_key_bindings
 
 # 🗃️ PATH and Environment Variables
 # Use 'set -x' to export variables in Fish.
