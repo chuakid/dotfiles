@@ -77,26 +77,28 @@ smart_splits.apply_to_config(config, {
 	},
 })
 
-local function cmd_exists(cmd)
-	local f = io.popen("which " .. cmd)
+local function cmd_exists(name)
+	local f = io.open(name, "r")
 	if f then
-		local path = f:read("*a")
 		f:close()
-		return path ~= ""
+		return true
+	else
+		return false
 	end
-	return false
 end
 
 -- Define the order of shells you prefer
 local shells = {
-	{ "fish", "-l" },
-	{ "zsh", "-l" },
-	{ "bash", "-l" },
+	{ wezterm.home_dir .. "/.nix-profile/bin/fish", "-l" },
+	{ "/bin/fish", "-l" },
+	{ "/bin/zsh", "-l" },
+	{ "/bin/bash", "-l" },
 }
 
 -- Find the first available shell in the list
 local found_shell = nil
 for _, shell_pair in ipairs(shells) do
+	wezterm.log_error(shell_pair[1])
 	if cmd_exists(shell_pair[1]) then
 		found_shell = shell_pair
 		break
