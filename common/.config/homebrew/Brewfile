@@ -1,4 +1,3 @@
-# utils
 brew "stow"
 brew "eza"
 brew "bat"
@@ -18,12 +17,14 @@ brew "btop"
 brew "ripgrep"
 brew "git"
 brew "gcc"
-
-# languages
 brew "go"
-
-# file manager
 brew "yazi"
-
-# nvim
 brew "neovim"
+brew "hurl"
+brew "cargo"
+brew "rustc"
+brew "uv"
+brew "gemini-cli"
+brew "fish"
+brew "oh-my-posh"
+brew "mtr"
