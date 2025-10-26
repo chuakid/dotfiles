@@ -36,6 +36,7 @@
     git
     gcc
     mtr
+    navi
 
     oh-my-posh
 
