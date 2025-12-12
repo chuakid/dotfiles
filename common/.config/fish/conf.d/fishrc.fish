@@ -5,6 +5,7 @@ set fish_greeting ""
 # 🗃️ PATH and Environment Variables
 # Use 'set -x' to export variables in Fish.
 fish_add_path $HOME/.local/bin
+fish_add_path $HOME/.fnm
 set -gx EDITOR nvim
 
 # ⚙️ UTIL INTEGRATIONS
