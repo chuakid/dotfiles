@@ -93,9 +93,6 @@ end
 -- Define the order of shells you prefer
 local shells = {
 	{ wezterm.home_dir .. "/.nix-profile/bin/fish", "-l" },
-	{ "/bin/fish", "-l" },
-	{ "/bin/zsh", "-l" },
-	{ "/bin/bash", "-l" },
 }
 
 -- Find the first available shell in the list
