@@ -8,12 +8,6 @@
     dark = true      # or light = true, or omit for auto-detection
 [merge]
     conflictstyle = zdiff3
-[credential "https://github.com"]
-	helper = 
-	helper = !~/.nix-profile/bin/gh auth git-credential
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !~/.nix-profile/bin/gh auth git-credential
 [include]
     path = ~/.gitconfig_local
 [push]

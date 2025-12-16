@@ -23,7 +23,6 @@
     tmux
     zoxide
     tlrc
-    gh
     jq
     pnpm
     lazygit
