@@ -45,6 +45,7 @@ return {
         biome = {},
         tinymist = {}, -- typst
         rust_analyzer = {},
+        ansiblels = {},
       }
       vim.keymap.set('n', 'K', function()
         vim.lsp.buf.hover { border = 'rounded' }
