@@ -23,7 +23,7 @@ config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 1000
 
 -- keys
-config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
 		key = "s",
