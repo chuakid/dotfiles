@@ -2,6 +2,7 @@ version: 3
 final_space: true
 palette:
   blue: "#8AADF4"
+  kube_blue: "#326CE5"
   lavender: "#B7BDF8"
   os: "#ACB0BE"
   pink: "#F5BDE6"
@@ -39,6 +40,11 @@ blocks:
         style: plain
         foreground: p:yellow
         template: " {{ .Venv }} "
+      - type: kubectl
+        foreground: "#FFFFFF"
+        background: "p:kube_blue"
+        template: " 󱃾 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+
   - type: prompt
     alignment: left
     newline: true
