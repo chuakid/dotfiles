@@ -41,8 +41,7 @@ blocks:
         foreground: p:yellow
         template: " {{ .Venv }} "
       - type: kubectl
-        foreground: "#FFFFFF"
-        background: "p:kube_blue"
+        foreground: "p:kube_blue"
         template: " 󱃾 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
 
   - type: prompt
