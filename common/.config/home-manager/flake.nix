@@ -25,15 +25,15 @@
           homeDirectory = "/home/kelvin";
         };
       };
-      SP13304 = home-manager.lib.homeManagerConfiguration {
+      "kelvin@darwin" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
         modules = [
           # { nixpkgs.overlays = [ neovim-nightly-overlay.overlays.default ]; }
           ./work.nix
         ];
         extraSpecialArgs = {
-          username = "SP13304";
-          homeDirectory = "/Users/SP13304";
+          username = "kelvin";
+          homeDirectory = "/Users/kelvin";
         };
       };
     };
