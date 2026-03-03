@@ -14,10 +14,11 @@ blocks:
     alignment: left
     segments:
       - type: path
-        template: " {{ .Path }}"
+        template: "{{ .Path }}"
         background: p:blue
         foreground: p:black
         style: "diamond"
+        leading_diamond: "\uE0B6"
         properties:
           home_icon: "~"
           style: full
