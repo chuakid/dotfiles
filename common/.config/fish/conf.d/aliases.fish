@@ -29,3 +29,5 @@ abbr --add gl 'git log --graph --abbrev-commit --decorate --format=format:\"%C(b
 abbr --add title 'wezterm cli set-tab-title'
 abbr --add n nvim
 
+abbr --add k kubectl
+abbr --add kunset 'kubectl config unset current-context'
