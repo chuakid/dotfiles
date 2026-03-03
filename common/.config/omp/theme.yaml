@@ -8,22 +8,26 @@ palette:
   pink: "#F5BDE6"
   yellow: "#f9e2af"
   green: "#40a02b"
+  black: "#000000"
 blocks:
   - type: prompt
     alignment: left
     segments:
-      - template: "{{ .Path }}"
-        foreground: p:blue
-        type: path
-        style: plain
+      - type: path
+        template: " {{ .Path }}"
+        background: p:blue
+        foreground: p:black
+        style: "diamond"
         properties:
           home_icon: "~"
           style: full
           mapped_locations:
             /var/home: "~"
-      - foreground: p:lavender
-        type: git
-        style: plain
+      - type: git
+        foreground: p:black
+        background: p:lavender
+        powerline_symbol: "\ue0b4"
+        style: powerline
         properties:
           branch_identical_icon: ""
           branch_icon: " "
@@ -37,11 +41,16 @@ blocks:
           revert_icon: " "
           tag_icon: " "
       - type: python
-        style: plain
-        foreground: p:yellow
-        template: " {{ .Venv }} "
+        style: powerline
+        powerline_symbol: "\ue0b4"
+        background: p:yellow
+        foreground: p:black
+        template: "  {{ .Venv }} "
       - type: kubectl
-        foreground: "p:kube_blue"
+        style: powerline
+        powerline_symbol: "\ue0b4"
+        background: p:kube_blue
+        foreground: "#ffffff"
         template: " 󱃾 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
 
   - type: prompt
