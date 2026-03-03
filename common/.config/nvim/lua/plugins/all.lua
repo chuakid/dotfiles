@@ -312,27 +312,6 @@ return {
         desc = '[S]earch [F]ile',
       },
       {
-        '<leader>sh',
-        function()
-          require('snacks.picker').help()
-        end,
-        desc = '[S]earch [H]elp',
-      },
-      {
-        '<leader>sk',
-        function()
-          require('snacks.picker').keymaps()
-        end,
-        desc = '[S]earch [K]eymaps',
-      },
-      {
-        '<leader>sr',
-        function()
-          require('snacks.picker').recent()
-        end,
-        desc = '[S]earch [R]ecents',
-      },
-      {
         '<leader>sd',
         function()
           require('snacks.picker').diagnostics()
