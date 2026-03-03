@@ -23,6 +23,8 @@ blocks:
           style: full
           mapped_locations:
             /var/home: "~"
+
+
       - type: git
         foreground: p:black
         background: p:lavender
@@ -40,12 +42,14 @@ blocks:
           rebase_icon: " "
           revert_icon: " "
           tag_icon: " "
+
       - type: python
         style: powerline
         powerline_symbol: "\ue0b4"
         background: p:yellow
         foreground: p:black
         template: "  {{ .Venv }} "
+
       - type: kubectl
         style: powerline
         powerline_symbol: "\ue0b4"
