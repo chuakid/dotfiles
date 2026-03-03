@@ -24,18 +24,11 @@ return {
       keymap = { preset = 'super-tab' },
       snippets = { preset = 'luasnip' },
       sources = {
-        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'minuet' },
+        default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
         providers = {
           lazydev = {
             name = 'LazyDev',
             module = 'lazydev.integrations.blink',
-          },
-          minuet = {
-            name = 'minuet',
-            module = 'minuet.blink',
-            async = true,
-            timeout_ms = 3000,
-            score_offset = 50,
           },
         },
       },
@@ -459,6 +452,10 @@ return {
   },
   {
     'fei6409/log-highlight.nvim',
+    opts = {},
+  },
+  {
+    'sphamba/smear-cursor.nvim',
     opts = {},
   },
 
