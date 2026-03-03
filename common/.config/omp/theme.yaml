@@ -25,12 +25,11 @@ blocks:
           mapped_locations:
             /var/home: "~"
 
-
       - type: git
         foreground: p:black
         background: p:lavender
         powerline_symbol: "\ue0b4"
-        style: powerline
+        style: accordion
         properties:
           branch_identical_icon: ""
           branch_icon: " "
