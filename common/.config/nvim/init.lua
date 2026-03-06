@@ -130,6 +130,7 @@ vim.diagnostic.config {
     source = 'if_many',
     spacing = 2,
   },
+  update_in_insert = true,
 }
 
 -- [[ Basic Autocommands ]]
