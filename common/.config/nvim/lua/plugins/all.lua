@@ -87,6 +87,7 @@ return {
         tinymist = {}, -- typst
         rust_analyzer = {},
         ansiblels = {},
+        jdtls = {},
       }
 
       vim.keymap.set('n', 'K', function()
@@ -154,6 +155,7 @@ return {
         go = { 'gofmt' },
         nix = { 'nixfmt' },
         json = { 'jq' },
+        java = { 'google-java-format' },
       },
     },
   },
