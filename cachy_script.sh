@@ -59,4 +59,11 @@ for app in "${flatpak_apps[@]}"; do
     flatpak install flathub "$app" -y
 done
 
+
+#6. firewall
+# kdeconnectd
+sudo ufw allow 1714:1764/udp
+sudo ufw allow 1714:1764/tcp
+sudo ufw reload
+
 color_echo "CachyOS setup complete!"
