@@ -29,7 +29,15 @@ native_apps=(
     qbittorrent 
     lutris 
     steam
+    dolphin
+
+
+    qt5ct 
+    qt6ct
+    qt6ct-kde
+    adw-gtk-theme
 )
+
 
 color_echo "Installing native apps..."
 paru -S --needed --noconfirm "${native_apps[@]}"
