@@ -83,6 +83,8 @@ gestures {
 // See the binds section below for more spawn examples.
 
 spawn-at-startup "kdeconnectd"
+spawn-at-startup "discord"
+spawn-at-startup "steam"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
