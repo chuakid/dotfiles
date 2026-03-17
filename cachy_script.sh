@@ -29,7 +29,6 @@ native_apps=(
     qbittorrent 
     lutris 
     steam
-    dolphin
 
 
     qt5ct 
