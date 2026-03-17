@@ -20,11 +20,11 @@ config.max_fps = 165
 config.window_background_opacity = 1.0
 config.background = {
 	-- Base image
-	{
-		source = {
-			File = wezterm.home_dir .. "/Wallpapers/rin3.png",
-		},
-	},
+	-- {
+	-- 	source = {
+	-- 		File = wezterm.home_dir .. "/Wallpapers/rin3.png",
+	-- 	},
+	-- },
 	-- Theme-colored overlay
 	{
 		source = {
