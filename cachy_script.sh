@@ -35,6 +35,8 @@ native_apps=(
     qt5ct 
     qt6ct-kde
     adw-gtk-theme
+
+    dsearch-bin
 )
 
 
