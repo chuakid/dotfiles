@@ -35,6 +35,7 @@ native_apps=(
     qt5ct 
     qt6ct-kde
     adw-gtk-theme
+    libappindicator-gtk3 # for discord's tray icon
 
     dsearch-bin
 )
