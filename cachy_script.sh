@@ -42,7 +42,6 @@ native_apps=(
 
 color_echo "Installing native apps..."
 paru -S --needed --noconfirm "${native_apps[@]}"
-systemctl --user enable --now dsearch
 
 # 3.5 install wezterm from aur
 paru -Sy wezterm-nightly-bin
@@ -70,3 +69,4 @@ sudo ufw allow 1714:1764/tcp
 sudo ufw reload
 
 color_echo "CachyOS setup complete!"
+color_echo "Please run systemctl --user enable --now dsearch to get indexing for dsearch"
