@@ -31,7 +31,20 @@ command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
 command -v fzf >/dev/null && source <(fzf --zsh)
 (( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
+# FNM
+if command -v fnm >/dev/null
+then
+    export PATH="$HOME/.fnm:$PATH"
+    eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
 export EDITOR=nvim
+
+# Vi mode and edit-command-line
+bindkey -v
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
 
 # aliases
 source $ZDOTDIR/.zsh_aliases

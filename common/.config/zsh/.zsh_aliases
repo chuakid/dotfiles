@@ -37,5 +37,9 @@ alias title="wezterm cli set-tab-title"
 # nvim
 alias n=nvim
 
+# kubectl
+alias k=kubectl
+alias kunset='kubectl config unset current-context'
+
 # copy last command into pbcopy
 alias fccopy="fc -ln -1 | pbcopy"
