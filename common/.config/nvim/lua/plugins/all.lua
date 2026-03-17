@@ -483,12 +483,6 @@ return {
     end,
   },
   {
-    'rmagatti/goto-preview',
-    dependencies = 'rmagatti/logger.nvim',
-    event = 'BufEnter',
-    config = { default_mappings = true },
-  },
-  {
     'mrjones2014/smart-splits.nvim',
     lazy = false,
     config = function()
