@@ -85,6 +85,7 @@ gestures {
 spawn-at-startup "kdeconnectd"
 spawn-at-startup "discord"
 spawn-at-startup "steam"
+spawn-at-startup "fcitx5" "-d"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -152,6 +153,14 @@ window-rule {
     // block-out-from "screencast"
 }
 
+environment {
+    // Input Method variables
+    XMODIFIERS "@im=fcitx"
+    SDL_IM_MODULE "fcitx"
+    
+    // For modern Qt6 apps (optional but recommended)
+    QT_IM_MODULES "wayland;fcitx;ibus"
+}
 
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
