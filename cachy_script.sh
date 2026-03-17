@@ -42,6 +42,7 @@ native_apps=(
 
 color_echo "Installing native apps..."
 paru -S --needed --noconfirm "${native_apps[@]}"
+systemctl --user enable --now dsearch
 
 # 3.5 install wezterm from aur
 paru -Sy wezterm-nightly-bin
