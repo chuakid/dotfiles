@@ -4,6 +4,6 @@
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
 cursor {
-    xcursor-theme "Adwaita"
-    xcursor-size 20
+    xcursor-theme "Catppuccin-Mocha-Dark-Cursors"
+    xcursor-size 28
 }
