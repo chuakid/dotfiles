@@ -1,4 +1,10 @@
-{ config, pkgs, username, homeDirectory, ... }:
+{
+  config,
+  pkgs,
+  username,
+  homeDirectory,
+  ...
+}:
 
 {
   home.username = username;
@@ -63,6 +69,8 @@
     typst
 
     kubectl
+
+    ansible
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
