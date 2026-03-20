@@ -193,12 +193,6 @@ return {
       require('mini.surround').setup()
       vim.keymap.set({ 'n', 'x' }, 's', '<Nop>') -- unbind s so surround works
 
-      require('mini.statusline').setup { use_icons = vim.g.have_nerd_font }
-      ---@diagnostic disable-next-line: duplicate-set-field
-      require('mini.statusline').section_location = function()
-        return '%2l:%-2v'
-      end
-
       require('mini.pairs').setup()
 
       require('mini.hipatterns').setup {
@@ -530,5 +524,12 @@ return {
   },
   {
     'mfussenegger/nvim-ansible',
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('lualine').setup()
+    end,
   },
 }

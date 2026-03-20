@@ -1,12 +1,7 @@
---- stop messages about deprecated
----@diagnostic disable-next-line: duplicate-set-field
-vim.deprecate = function() end
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-
 -- cursor blinking
 vim.opt.guicursor = {
   -- Normal, Visual, Command-line mode: block cursor, with blinking
@@ -81,9 +76,10 @@ vim.opt.confirm = true
 vim.opt.exrc = true
 
 -- 0 cmd height and fix for macros not showing up
-vim.opt.cmdheight = 0
-vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
-vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
+-- vim.opt.cmdheight = 0
+-- vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+-- vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
@@ -167,6 +163,7 @@ require('lazy').setup({
       styles = {
         functions = { 'italic' },
       },
+      auto_integrations = true,
     },
   },
   -- import rest of plugins
