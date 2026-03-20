@@ -17,24 +17,7 @@ config.inactive_pane_hsb = {
 }
 config.enable_scroll_bar = true
 config.max_fps = 165
-config.window_background_opacity = 1.0
-config.background = {
-	-- Base image
-	-- {
-	-- 	source = {
-	-- 		File = wezterm.home_dir .. "/Wallpapers/rin3.png",
-	-- 	},
-	-- },
-	-- Theme-colored overlay
-	{
-		source = {
-			Color = "#1e1e2e",
-		},
-		width = "100%",
-		height = "100%",
-		opacity = 0.98, -- Controls how much the image peeks through the theme color
-	},
-}
+config.window_background_opacity = 0.98
 config.hide_tab_bar_if_only_one_tab = true
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 1000
@@ -97,35 +80,7 @@ smart_splits.apply_to_config(config, {
 	},
 })
 
-local function cmd_exists(name)
-	local f = io.open(name, "r")
-	if f then
-		f:close()
-		return true
-	else
-		return false
-	end
-end
-
--- Define the order of shells you prefer
-local shells = {
-	{ wezterm.home_dir .. "/.nix-profile/bin/fish", "-l" },
-}
-
--- Find the first available shell in the list
-local found_shell = nil
-for _, shell_pair in ipairs(shells) do
-	wezterm.log_error(shell_pair[1])
-	if cmd_exists(shell_pair[1]) then
-		found_shell = shell_pair
-		break
-	end
-end
-
--- Set the default_prog to the first available shell,
--- or fall back to the system's default
-if found_shell then
-	config.default_prog = found_shell
-end
+-- Set the default_prog to fish or fall back to the system's default
+config.default_prog = { "sh", "-c", "if command -v fish >/dev/null 2>&1; then exec fish; else exec $SHELL; fi" }
 
 return config
