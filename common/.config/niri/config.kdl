@@ -170,6 +170,11 @@ environment {
     QT_IM_MODULES "wayland;fcitx;ibus"
 }
 
+layout {
+    always-center-single-column
+    default-column-width { proportion 1.0; }
+}
+
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/colors.kdl"
