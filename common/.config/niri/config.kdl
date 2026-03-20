@@ -86,6 +86,7 @@ spawn-at-startup "kdeconnectd"
 spawn-at-startup "discord"
 spawn-at-startup "steam"
 spawn-at-startup "fcitx5" "-d"
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets,ssh,pkcs11"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
