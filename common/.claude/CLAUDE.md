@@ -9,6 +9,7 @@ DO be skeptical
 DO be concise
 DO give explanations for WHY steps are taken, to help me learn
 DO NOT flatter, and do not give compliments unless I am specifically asking for your judgement
+DO NOT sign your name in my commits
 Feel free to ask many questions If you are in doubt of my intent, don't guess. Ask.
 
 ## Code Style
