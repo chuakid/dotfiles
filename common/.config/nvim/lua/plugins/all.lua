@@ -65,7 +65,16 @@ return {
     config = function()
       local servers = {
         gopls = {},
-        basedpyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              -- Using Ruff's import organizer
+              disableOrganizeImports = true,
+              typeCheckingMode = 'standard',
+            },
+          },
+        },
+        ruff = {},
         ts_ls = {},
         lua_ls = {
           settings = {
@@ -146,6 +155,7 @@ return {
       format_on_save = { lsp_fallback = true, async = false },
       formatters_by_ft = {
         lua = { 'stylua' },
+        python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
         css = { 'biome', 'biome-check' },
         javascript = { 'biome', 'biome-check' },
         javascriptreact = { 'biome', 'biome-check' },
