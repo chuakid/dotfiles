@@ -37,6 +37,9 @@ native_apps=(
     libappindicator-gtk3 # for discord's tray icon
 
     dsearch-bin
+
+    grim
+    satty
 )
 
 
