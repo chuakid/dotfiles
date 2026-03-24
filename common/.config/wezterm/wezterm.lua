@@ -18,20 +18,46 @@ config.inactive_pane_hsb = {
 config.enable_scroll_bar = true
 config.max_fps = 165
 config.window_background_opacity = 0.98
-config.hide_tab_bar_if_only_one_tab = true
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 1000
+
+-- resurrect
+
+local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
+resurrect.state_manager.periodic_save({
+	interval_seconds = 300,
+	save_tabs = true,
+	save_windows = true,
+	save_workspaces = true,
+})
+wezterm.on("gui-startup", resurrect.state_manager.resurrect_on_gui_startup)
+-- loads the state whenever I create a new workspace
+wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, path, label)
+	local workspace_state = resurrect.workspace_state
+	workspace_state.restore_workspace(resurrect.state_manager.load_state(label, "workspace"), {
+		window = window,
+		relative = true,
+		restore_text = true,
+		on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+	})
+end)
+
+-- Saves the state whenever I select a workspace
+wezterm.on("smart_workspace_switcher.workspace_switcher.selected", function(window, path, label)
+	local workspace_state = resurrect.workspace_state
+	resurrect.state_manager.save_state(workspace_state.get_workspace_state())
+end)
 
 -- keys
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
-		key = "s",
+		key = "-",
 		mods = "LEADER",
 		action = act.SplitVertical,
 	},
 	{
-		key = "v",
+		key = "|",
 		mods = "LEADER",
 		action = act.SplitHorizontal,
 	},
@@ -79,6 +105,73 @@ smart_splits.apply_to_config(config, {
 		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
 	},
 })
+
+wezterm.on("augment-command-palette", function(_, _)
+	local workspace_state = resurrect.workspace_state
+	return {
+		{
+			brief = "Window | Workspace: Save Workspaces",
+			icon = "cod_save",
+			action = wezterm.action_callback(function(_, _, _)
+				resurrect.state_manager.save_state(workspace_state.get_workspace_state())
+			end),
+		},
+		{
+			brief = "Window | Workspace: Rename Workspace",
+			icon = "md_briefcase_edit",
+			action = wezterm.action.PromptInputLine({
+				description = "Enter new name for workspace",
+				action = wezterm.action_callback(function(_, _, line)
+					if line then
+						wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
+						resurrect.state_manager.save_state(workspace_state.get_workspace_state())
+					end
+				end),
+			}),
+		},
+		{
+			brief = "Window | Delete Workspace",
+			action = wezterm.action_callback(function(win, pane)
+				resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
+					resurrect.state_manager.delete_state(id)
+				end, {
+					title = "Delete State",
+					description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
+					fuzzy_description = "Search State to Delete: ",
+					is_fuzzy = true,
+				})
+			end),
+		},
+		{
+			brief = "Window | Load Workspace",
+			action = wezterm.action_callback(function(win, pane)
+				resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id, label)
+					local type = string.match(id, "^([^/]+)") -- match before '/'
+
+					id = string.match(id, "([^/]+)$") -- match after '/'
+					id = string.match(id, "(.+)%..+$") -- remove file extention
+					local opts = {
+						relative = true,
+						restore_text = true,
+						on_pane_restore = resurrect.tab_state.default_on_pane_restore,
+						window = pane:window(),
+						close_open_tabs = true,
+					}
+					if type == "workspace" then
+						local state = resurrect.state_manager.load_state(id, "workspace")
+						resurrect.workspace_state.restore_workspace(state, opts)
+					elseif type == "window" then
+						local state = resurrect.state_manager.load_state(id, "window")
+						resurrect.window_state.restore_window(pane:window(), state, opts)
+					elseif type == "tab" then
+						local state = resurrect.state_manager.load_state(id, "tab")
+						resurrect.tab_state.restore_tab(pane:tab(), state, opts)
+					end
+				end)
+			end),
+		},
+	}
+end)
 
 -- Set the default_prog to fish or fall back to the system's default
 config.default_prog = { "sh", "-c", "if command -v fish >/dev/null 2>&1; then exec fish; else exec $SHELL; fi" }
