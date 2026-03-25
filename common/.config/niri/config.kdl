@@ -175,6 +175,9 @@ layout {
     default-column-width { proportion 1.0; }
 }
 
+workspace "Browser"
+workspace "Terminal"
+
 include "dms/alttab.kdl"
 include "dms/binds.kdl"
 include "dms/colors.kdl"
