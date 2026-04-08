@@ -40,12 +40,12 @@ end)
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
-		key = "-",
+		key = '"',
 		mods = "LEADER",
 		action = act.SplitVertical,
 	},
 	{
-		key = "|",
+		key = "%",
 		mods = "LEADER",
 		action = act.SplitHorizontal,
 	},
