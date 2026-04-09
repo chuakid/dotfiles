@@ -76,9 +76,9 @@ vim.opt.confirm = true
 vim.opt.exrc = true
 
 -- 0 cmd height and fix for macros not showing up
--- vim.opt.cmdheight = 0
--- vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
--- vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
+vim.opt.cmdheight = 0
+vim.cmd [[ autocmd RecordingEnter * set cmdheight=1 ]]
+vim.cmd [[ autocmd RecordingLeave * set cmdheight=0 ]]
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -189,5 +189,29 @@ require('lazy').setup({
 })
 
 vim.cmd.colorscheme 'catppuccin-mocha'
+
+require('vim._core.ui2').enable {
+  enable = true, -- Whether to enable or disable the UI.
+  msg = { -- Options related to the message module.
+    ---@type 'cmd'|'msg' Default message target, either in the
+    ---cmdline or in a separate ephemeral message window.
+    ---@type string|table<string, 'cmd'|'msg'|'pager'> Default message target
+    ---or table mapping |ui-messages| kinds and triggers to a target.
+    targets = 'cmd',
+    cmd = { -- Options related to messages in the cmdline window.
+      height = 0.5, -- Maximum height while expanded for messages beyond 'cmdheight'.
+    },
+    dialog = { -- Options related to dialog window.
+      height = 0.5, -- Maximum height.
+    },
+    msg = { -- Options related to msg window.
+      height = 0.5, -- Maximum height.
+      timeout = 4000, -- Time a message is visible in the message window.
+    },
+    pager = { -- Options related to message window.
+      height = 1, -- Maximum height.
+    },
+  },
+}
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
