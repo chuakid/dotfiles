@@ -53,6 +53,7 @@
 
     # nvim
     neovim
+    tree-sitter
 
     # curl manager
     hurl
