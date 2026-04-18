@@ -41,13 +41,13 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
 	{
 		key = '"',
-		mods = "LEADER",
-		action = act.SplitVertical,
+		mods = "LEADER|SHIFT",
+		action = act.SplitPane({ direction = "Down" }),
 	},
 	{
 		key = "%",
-		mods = "LEADER",
-		action = act.SplitHorizontal,
+		mods = "LEADER|SHIFT",
+		action = act.SplitPane({ direction = "Right" }),
 	},
 	{
 		key = "q",
