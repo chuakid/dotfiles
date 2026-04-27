@@ -354,7 +354,9 @@ require('lazy').setup({
         require('mini.map').toggle()
       end, { desc = 'Toggle Minimap' })
 
-      require('mini.notify').setup() -- non-blocking notification popups
+      require('mini.notify').setup({
+        lsp_progress = { enable = false },
+      })
     end,
   },
   { -- Swiss-army-knife: file explorer, fuzzy picker, lazygit, dashboard, and more
