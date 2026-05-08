@@ -1,3 +1,8 @@
+# 📦 Nix Profile
+if test -d ~/.nix-profile/bin
+    fish_add_path ~/.nix-profile/bin
+end
+
 oh-my-posh init fish --config $HOME/.config/omp/theme.yaml | source
 fish_vi_key_bindings
 set fish_greeting ""
