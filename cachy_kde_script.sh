@@ -1,5 +1,5 @@
 #!/bin/bash
-# Optimized CachyOS Post-Install Script
+# Refined CachyOS KDE Post-Install Script
 
 # Check for sudo
 if [ "$EUID" -ne 0 ]; then
@@ -22,32 +22,24 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 
 # 3. Install Native Apps 
 native_apps=(
+    # Virtualization
     virt-manager 
     qemu-desktop 
     libvirt 
+    
+    # Social/Gaming
     discord 
     qbittorrent 
     lutris 
     steam
-
-
-    qt5ct 
-    qt6ct-kde
-    adw-gtk-theme
-    libappindicator-gtk3 # for discord's tray icon
-
-    dsearch-bin
-
-    grim
-    satty
     tailscale
 )
-
 
 color_echo "Installing native apps..."
 paru -S --needed --noconfirm "${native_apps[@]}"
 
-# 3.5 install wezterm from aur
+# 3.5 Install wezterm
+color_echo "Installing wezterm-nightly-bin..."
 paru -Sy wezterm-nightly-bin
 
 # 4. Enable Services
@@ -64,15 +56,14 @@ flatpak_apps=(
 )
 
 for app in "${flatpak_apps[@]}"; do
+    color_echo "Installing Flatpak: $app"
     flatpak install flathub "$app" -y
 done
 
-
-#6. firewall
-# kdeconnectd
+# 6. Firewall for KDE Connect
+color_echo "Configuring firewall for KDE Connect..."
 sudo ufw allow 1714:1764/udp
 sudo ufw allow 1714:1764/tcp
 sudo ufw reload
 
-color_echo "CachyOS setup complete!"
-color_echo "Please run systemctl --user enable --now dsearch to get indexing for dsearch"
+color_echo "CachyOS KDE setup complete!"
