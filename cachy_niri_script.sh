@@ -40,6 +40,7 @@ native_apps=(
 
     grim
     satty
+    tailscale
 )
 
 
@@ -49,15 +50,17 @@ paru -S --needed --noconfirm "${native_apps[@]}"
 # 3.5 install wezterm from aur
 paru -Sy wezterm-nightly-bin
 
-# 4. Enable Virtualization service
+# 4. Enable Services
+color_echo "Enabling services..."
 systemctl enable --now libvirtd
+systemctl enable --now tailscaled
 
 # 5. Install Flatpaks
 flatpak_apps=(
     com.github.tchx84.Flatseal
     net.davidotek.pupgui2
     it.mijorus.gearlever
-    com.microsoft.Edge
+    org.telegram.desktop
 )
 
 for app in "${flatpak_apps[@]}"; do
