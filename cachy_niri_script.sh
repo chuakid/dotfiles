@@ -1,9 +1,9 @@
 #!/bin/bash
 # Optimized CachyOS Post-Install Script
 
-# Check for sudo
-if [ "$EUID" -ne 0 ]; then
-    echo "Please run with sudo (or use paru which handles it)"
+# Check for root
+if [ "$EUID" -eq 0 ]; then
+    echo "Please do NOT run this script as root. Use a normal user with sudo privileges."
     exit 1
 fi
 
@@ -18,7 +18,7 @@ paru -Syu --noconfirm
 # 2. Setup Flatpak
 color_echo "Setting up Flathub..."
 paru -S --needed --noconfirm flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # 3. Install Native Apps 
 native_apps=(
@@ -52,8 +52,8 @@ paru -Sy wezterm-nightly-bin
 
 # 4. Enable Services
 color_echo "Enabling services..."
-systemctl enable --now libvirtd
-systemctl enable --now tailscaled
+sudo systemctl enable --now libvirtd
+sudo systemctl enable --now tailscaled
 
 # 5. Install Flatpaks
 flatpak_apps=(
@@ -64,7 +64,7 @@ flatpak_apps=(
 )
 
 for app in "${flatpak_apps[@]}"; do
-    flatpak install flathub "$app" -y
+    sudo flatpak install flathub "$app" -y
 done
 
 
