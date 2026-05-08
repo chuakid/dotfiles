@@ -30,4 +30,4 @@ if type -q direnv
     direnv hook fish | source
 end
 
-set theme_color_scheme "Catppuccin Mocha"
+fish_config theme choose catppuccin-mocha
