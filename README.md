@@ -33,3 +33,5 @@ Kelvin's dotfiles, managed by stow and Nix home-manager.
 - Run "fish_update_completions" to update completions from manpages
 - Machine specific goes into `~/.config/fish/config.fish`
 
+### KDE 
+- Install konsave with `uv tool install konsave` and `konsave -i profile.knsv` to restore it
