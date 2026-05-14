@@ -253,10 +253,8 @@ require('lazy').setup({
   },
 
   -- ── Treesitter ─────────────────────────────────────────────────
-  { -- Incremental parsing for syntax highlighting, indentation, and folds
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    lazy = false,
+  {
+    'arborist-ts/arborist.nvim',
     opts = {},
   },
   { -- Shows the function/class you're inside at the top of the window
@@ -354,9 +352,9 @@ require('lazy').setup({
         require('mini.map').toggle()
       end, { desc = 'Toggle Minimap' })
 
-      require('mini.notify').setup({
+      require('mini.notify').setup {
         lsp_progress = { enable = false },
-      })
+      }
     end,
   },
   { -- Swiss-army-knife: file explorer, fuzzy picker, lazygit, dashboard, and more
@@ -552,7 +550,7 @@ require('lazy').setup({
   },
   { -- Renders markdown with headings, code blocks, and links in-buffer
     'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-mini/mini.nvim' },
+    dependencies = { 'nvim-mini/mini.nvim' },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
