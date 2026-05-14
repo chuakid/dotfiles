@@ -260,7 +260,7 @@ require('lazy').setup({
   { -- Shows the function/class you're inside at the top of the window
     'nvim-treesitter/nvim-treesitter-context',
     opts = { max_lines = 4 },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'arborist-ts/arborist.nvim' },
   },
   { -- Auto-close and rename HTML/JSX tags
     'windwp/nvim-ts-autotag',
