@@ -58,7 +58,6 @@ sudo systemctl enable --now tailscaled
 # 5. Install Flatpaks
 flatpak_apps=(
     com.github.tchx84.Flatseal
-    net.davidotek.pupgui2
     it.mijorus.gearlever
     org.telegram.desktop
 )
