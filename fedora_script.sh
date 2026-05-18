@@ -89,7 +89,6 @@ color_echo "green" "Done installing ${dnf_apps[@]}"
 flatpak_apps=(
     com.github.tchx84.Flatseal
     net.davidotek.pupgui2
-    it.mijorus.gearlever
 )
 for app_id in "${flatpak_apps[@]}"; do
     color_echo "yellow" "Installing $app_id"
