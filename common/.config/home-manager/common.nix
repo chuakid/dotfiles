@@ -63,9 +63,6 @@
 
     uv
 
-    # llm
-    gemini-cli
-
     fish
     typst
 
