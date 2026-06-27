@@ -251,6 +251,9 @@ require('lazy').setup({
       require('mason-lspconfig').setup {}
     end,
   },
+  { -- mdx support
+    'davidmh/mdx.nvim',
+  },
 
   -- ── Treesitter ─────────────────────────────────────────────────
   {
