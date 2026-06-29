@@ -61,7 +61,7 @@
     cargo
     rustc
 
-    uv
+    # uv
 
     fish
     typst
