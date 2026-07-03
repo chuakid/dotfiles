@@ -39,7 +39,6 @@
     btop
     ripgrep
     git
-    gcc
     mtr
     navi
 
