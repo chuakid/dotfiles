@@ -135,131 +135,12 @@
                 ],
                 "model": ""
             },
-            "name": "kaoruhana",
+            "name": "k-on",
             "newline-replace": "<br>",
             "port": "8765",
             "screenshot": 0,
             "tags": [
-                "kaoruhana"
-            ],
-            "term": {
-                "deck": "Mining",
-                "fields": [
-                    [
-                        "Expression",
-                        "{expression}"
-                    ],
-                    [
-                        "ExpressionFurigana",
-                        "{furigana-plain}"
-                    ],
-                    [
-                        "ExpressionReading",
-                        "{reading}"
-                    ],
-                    [
-                        "ExpressionAudio",
-                        "{audio-media}"
-                    ],
-                    [
-                        "SelectionText",
-                        ""
-                    ],
-                    [
-                        "MainDefinition",
-                        "{glossary}"
-                    ],
-                    [
-                        "DefinitionPicture",
-                        "{screenshot}"
-                    ],
-                    [
-                        "Sentence",
-                        "{cloze-prefix}<b>{cloze-body}</b>{cloze-suffix}"
-                    ],
-                    [
-                        "SentenceFurigana",
-                        ""
-                    ],
-                    [
-                        "SentenceAudio",
-                        "{audio}"
-                    ],
-                    [
-                        "Picture",
-                        ""
-                    ],
-                    [
-                        "Glossary",
-                        ""
-                    ],
-                    [
-                        "Hint",
-                        ""
-                    ],
-                    [
-                        "IsWordAndSentenceCard",
-                        ""
-                    ],
-                    [
-                        "IsClickCard",
-                        "x"
-                    ],
-                    [
-                        "IsSentenceCard",
-                        ""
-                    ],
-                    [
-                        "IsAudioCard",
-                        ""
-                    ],
-                    [
-                        "PitchPosition",
-                        ""
-                    ],
-                    [
-                        "PitchCategories",
-                        ""
-                    ],
-                    [
-                        "Frequency",
-                        ""
-                    ],
-                    [
-                        "FreqSort",
-                        ""
-                    ],
-                    [
-                        "MiscInfo",
-                        "{title}"
-                    ]
-                ],
-                "model": "Lapis"
-            },
-            "use-api-key": false
-        },
-        {
-            "api-key": "",
-            "audio-db": -20,
-            "audio-normalize": true,
-            "audio-pad-end": 0,
-            "audio-pad-start": 0,
-            "duplicate": 1,
-            "ex-glos": [
-            ],
-            "host": "http://localhost",
-            "kanji": {
-                "deck": "",
-                "fields": [
-                ],
-                "model": ""
-            },
-            "name": "test",
-            "newline-replace": "<br>",
-            "port": "8765",
-            "screenshot": 0,
-            "tags": [
-                "kaoruhana"
+                "k-on"
             ],
             "term": {
                 "deck": "Mining",
@@ -358,5 +239,5 @@
             "use-api-key": false
         }
     ],
-    "setProfile": "test"
+    "setProfile": "k-on"
 }
