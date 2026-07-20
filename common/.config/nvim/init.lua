@@ -556,7 +556,18 @@ require('lazy').setup({
     dependencies = { 'nvim-mini/mini.nvim' },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
-    opts = {},
+    opts = {
+      preset = 'obsidian',
+      checkbox = {
+        enabled = true,
+        unchecked = { icon = '󰄱 ' },
+        checked = { icon = '󰄲 ' },
+        custom = {
+          progress = { raw = '[/]', rendered = '󰦖 ', highlight = 'RenderMarkdownWarn' },
+        },
+      },
+      completions = { lsp = { enabled = true } },
+    },
   },
   { 'fei6409/log-highlight.nvim', opts = {} }, -- syntax highlighting for log files
   { 'sphamba/smear-cursor.nvim', opts = {} }, -- animated cursor trail
@@ -699,6 +710,34 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
   { 'mfussenegger/nvim-ansible' }, -- filetype detection and syntax for Ansible YAML
+  { -- obsidian config
+    'obsidian-nvim/obsidian.nvim',
+    version = '*', -- use latest release, remove to use latest commit
+    ---@module 'obsidian'
+    ---@type obsidian.config
+    opts = {
+      ui = {
+        enabled = false,
+      },
+      checkbox = {
+        order = { ' ', '/', 'x' }, -- toggle cycles: not done → in progress → done
+      },
+      legacy_commands = false,
+      picker = {
+        name = 'snacks.picker',
+      },
+      workspaces = {
+        {
+          name = 'personal',
+          path = '~/Documents/notes/personal',
+        },
+        {
+          name = 'work',
+          path = '~/Documents/notes/work/',
+        },
+      },
+    },
+  },
 }, {
   ui = {
     -- Fallback icons for terminals without Nerd Font
