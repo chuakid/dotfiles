@@ -9,6 +9,7 @@ palette:
   yellow: "#f9e2af"
   green: "#40a02b"
   black: "#000000"
+  aws_orange: "#FF9900"
 blocks:
   - type: prompt
     alignment: left
@@ -56,6 +57,15 @@ blocks:
         background: p:kube_blue
         foreground: "#ffffff"
         template: " 󱃾 {{.Context}}{{if .Namespace}} :: {{.Namespace}}{{end}} "
+
+      - type: aws
+        style: powerline
+        powerline_symbol: ""
+        background: p:aws_orange
+        foreground: p:black
+        template: "  {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
+        properties:
+          display_default: false
 
   - type: prompt
     alignment: left
