@@ -30,10 +30,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
--- Sync clipboard after UI loads to avoid slowing startup
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
-end)
+vim.opt.clipboard = 'unnamedplus'
 
 -- ╔══════════════════════════════════════════════════════════════╗
 -- ║                      Visual Settings                        ║
