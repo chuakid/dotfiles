@@ -717,7 +717,7 @@ require('lazy').setup({
     ---@type obsidian.config
     opts = {
       ui = {
-        enabled = false,
+        enable = false,
       },
       checkbox = {
         order = { ' ', '/', 'x' }, -- toggle cycles: not done → in progress → done
