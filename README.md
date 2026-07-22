@@ -24,10 +24,35 @@ Kelvin's dotfiles, managed by stow and Nix home-manager.
 ## Additional
 ### ZSH
 
-- `$ZDOTDIR` is set to `$HOME/.config/zsh`
+`$ZDOTDIR` is set to `$HOME/.config/zsh` (via `~/.zshenv`), so zsh reads its
+config from there instead of `~/.zshrc`.
+
+`.zshrc` is a thin loader: it initialises the prompt (oh-my-posh) and plugins
+(antidote), then auto-sources every `*.zsh` file in `conf.d/` followed by
+`conf.d.local/`. To add config, drop a `.zsh` file into one of those
+directories — no edits to `.zshrc` needed. Files load in alphabetical order
+within each directory.
+
+```
+$ZDOTDIR/
+├── .zshrc              # loader: prompt + plugins, then sources conf.d/*.zsh, conf.d.local/*.zsh
+├── conf.d/             # tracked, shared across machines
+│   ├── rc.zsh          # PATH, history, completions, emacs keybindings, zoxide/fzf/direnv
+│   ├── aliases.zsh     # shell aliases (git, eza, kubectl, …)
+│   └── fnm.zsh         # Node version manager
+├── conf.d.local/       # gitignored, per-machine (secrets, work tools, PATH tweaks)
+├── antidote/           # plugin manager (submodule)
+└── .zsh_plugins.txt    # antidote plugin list
+```
+
+- **Shared config** goes in `conf.d/` (committed).
+- **Per-machine config** goes in `conf.d.local/` (gitignored) — e.g. AWS
+  defaults, `$PATH` additions for local projects, and completions for tools
+  that aren't installed everywhere. `compinit` runs in `conf.d/rc.zsh` before
+  `conf.d.local/` loads, so `compdef`-based completions work there.
+- Plugins are managed by [antidote](https://github.com/mattmc3/antidote); edit
+  `.zsh_plugins.txt` to add/remove them.
 - stow mpv if needed (`stow mpv`)
-- `$ZDOTDIR/.zshrc_local` is sourced, meant for per-machine customisations
-- run `abbr import-aliases` to import the aliases as abbrs
 
 ### Fish
 - Run "fish_update_completions" to update completions from manpages
