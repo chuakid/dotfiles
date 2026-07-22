@@ -1,5 +1,5 @@
 # stow
-stow common --adopt
+stow --no-folding common --adopt
 git restore . # to reset zshrc
 
 # Install nix
