@@ -15,8 +15,17 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completions (case-insensitive matching)
-autoload -U compinit && compinit
+# Completions (case-insensitive matching). Run the full audit+rebuild at most
+# once a day; otherwise reuse the cached dump (-C skips the audit and staleness
+# check) for fast startup. The glob matches the dump only if it's >24h old.
+autoload -Uz compinit
+_zcompdump_stale=(${ZDOTDIR:-$HOME}/.zcompdump(Nmh+24))
+if (( $#_zcompdump_stale )); then
+    compinit
+else
+    compinit -C
+fi
+unset _zcompdump_stale
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Emacs keybindings + word navigation
