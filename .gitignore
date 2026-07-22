@@ -6,3 +6,4 @@
 .zsh_history
 .zcompdump
 common/.config/zsh/conf.d.local/
+common/.config/zsh/completions/
