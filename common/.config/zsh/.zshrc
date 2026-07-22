@@ -1,57 +1,16 @@
+# Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.yaml)"
+
+# Plugins (antidote)
 source $ZDOTDIR/antidote/antidote.zsh
 antidote load
 
-
-PATH="$PATH:$HOME/.local/bin"
-# History settings
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=5000
-HISTDUP=erase
-setopt appendhistory
-setopt sharehistory
-setopt incappendhistory
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
-# Case sensitive completions
-autoload -U compinit && compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-
-# Highlight when tabbing through files/folders
-# zstyle ':completion:*' menu select
-# zstyle ':completion:*' list-colors 'ma=48;2;76;86;106' 
-
-
-# UTIL INTEGRATIONS
-command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)" 
-command -v fzf >/dev/null && source <(fzf --zsh)
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
-
-# FNM
-if command -v fnm >/dev/null
-then
-    export PATH="$HOME/.fnm:$PATH"
-    eval "$(fnm env --use-on-cd --shell zsh)"
-fi
-
-export EDITOR=nvim
-bindkey -e
-
-# Keybindings for word navigation
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
-bindkey "^[[1;3D" backward-word
-bindkey "^[[1;3C" forward-word
-bindkey '^H' backward-kill-word # Ctrl + Backspace to delete word
-
-# aliases
-source $ZDOTDIR/.zsh_aliases
-
-# Local Configs
-[[ ! -f $ZDOTDIR/.zshrc_local ]] || source $ZDOTDIR/.zshrc_local
-
-[[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env"
+# Auto-source modular config. Committed drop-ins first, then machine-local ones.
+# Drop a *.zsh file into conf.d/ (tracked) or conf.d.local/ (gitignored) and it
+# loads at startup — no edits to this file needed. Mirrors fish's conf.d.
+for _dir in $ZDOTDIR/conf.d $ZDOTDIR/conf.d.local; do
+    for _file in $_dir/*.zsh(N); do
+        source $_file
+    done
+done
+unset _dir _file

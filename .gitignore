@@ -5,3 +5,4 @@
 .zsh_plugins.zsh
 .zsh_history
 .zcompdump
+common/.config/zsh/conf.d.local/
