@@ -1,11 +1,6 @@
 # AWS CLI helpers: profile switcher, console login, EKS import
 export AWS_DEFAULT_REGION=us-west-2
 
-if [ -f $(brew --prefix)/bin/aws_zsh_completer.sh ] ; then
-  autoload -Uz compinit && compinit
-  source $(brew --prefix)/bin/aws_zsh_completer.sh
-fi
-
 aws-profile() {
     if [[ "$1" == clear ]]; then
         unset AWS_PROFILE
