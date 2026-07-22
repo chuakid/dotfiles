@@ -15,14 +15,19 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completions (case-insensitive matching). fpath is set up before the first
-# compinit in .zshrc; this second compinit re-scans to pick up any completion
-# dirs added by plugins loaded above.
-autoload -Uz compinit && compinit
+# Completions: case-insensitive matching. compinit itself runs once in .zshrc.
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
-# Emacs keybindings + word navigation
-bindkey -e
+# Force-rebuild the completion cache. The compinit in .zshrc rebuilds its dump
+# at most once a day, so newly added completions won't appear until then — run
+# this to pick them up immediately.
+rebuild-completions() {
+    rm -f $ZDOTDIR/.zcompdump*
+    autoload -Uz compinit && compinit -d $ZDOTDIR/.zcompdump
+}
+
+# Word navigation (vi-mode owns the base keymap; these run after it via
+# ZVM_INIT_MODE=sourcing, so they augment insert mode rather than get clobbered).
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;3D" backward-word
