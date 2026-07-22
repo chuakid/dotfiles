@@ -1,6 +1,11 @@
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.yaml)"
 
+# fpath must include our generated _command completion dirs BEFORE the first
+# compinit, otherwise a command name we ship (e.g. `watcher`) can be claimed by
+# a system completion that also lists it (e.g. `_openstack`), and the later
+# compinit in conf.d won't override an already-registered association.
+fpath=($ZDOTDIR/completions $ZDOTDIR/conf.d.local/completions $fpath)
 autoload -Uz compinit && compinit
 
 # Plugins (antidote, static bundle). Regenerate the bundle only when the plugin

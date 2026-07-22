@@ -15,9 +15,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Completions (case-insensitive matching). fpath must include the dir of
-# generated _command files before compinit so zsh can autoload them on Tab.
-fpath=($ZDOTDIR/completions $ZDOTDIR/conf.d.local/completions $fpath)
+# Completions (case-insensitive matching). fpath is set up before the first
+# compinit in .zshrc; this second compinit re-scans to pick up any completion
+# dirs added by plugins loaded above.
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
