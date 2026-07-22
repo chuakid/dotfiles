@@ -27,6 +27,11 @@ bindkey "^[[1;3D" backward-word
 bindkey "^[[1;3C" forward-word
 bindkey '^H' backward-kill-word # Ctrl + Backspace to delete word
 
+# Ctrl-x Ctrl-e: edit the current command line in $EDITOR (nvim)
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
 # Tool integrations
 command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
 command -v fzf >/dev/null && source <(fzf --zsh)
