@@ -1,6 +1,8 @@
 # Prompt
 eval "$(oh-my-posh init zsh --config $HOME/.config/omp/theme.yaml)"
 
+autoload -Uz compinit && compinit
+
 # Plugins (antidote, static bundle). Regenerate the bundle only when the plugin
 # list changes, then source the static file — avoids re-bundling every startup.
 zsh_plugins=$ZDOTDIR/.zsh_plugins
