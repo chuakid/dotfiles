@@ -140,6 +140,6 @@ wezterm.on("augment-command-palette", function(_, _)
 end)
 
 -- Set the default_prog to fish or fall back to the system's default
-config.default_prog = { "sh", "-c", "if command -v fish >/dev/null 2>&1; then exec fish; else exec $SHELL; fi" }
+-- config.default_prog = { "sh", "-c", "if command -v fish >/dev/null 2>&1; then exec fish; else exec $SHELL; fi" }
 
 return config
