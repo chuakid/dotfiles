@@ -41,6 +41,7 @@
     git
     mtr
     navi
+    fnm
 
     oh-my-posh
 
