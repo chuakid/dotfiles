@@ -735,6 +735,11 @@ require('lazy').setup({
       },
     },
   },
+  {
+    'SCJangra/table-nvim',
+    ft = 'markdown',
+    opts = {},
+  },
 }, {
   ui = {
     -- Fallback icons for terminals without Nerd Font
