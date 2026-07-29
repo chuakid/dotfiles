@@ -17,6 +17,23 @@ _aws-profile() {
 }
 compdef _aws-profile aws-profile
 
+# Switch the region the AWS CLI (and aws-login) uses for this shell, overriding the
+# AWS_DEFAULT_REGION exported above. Does NOT affect kubectl/EKS — that region is
+# baked into each kubeconfig context, so switch clusters with kubectx instead.
+aws-region() {
+    if [[ "$1" == clear ]]; then
+        unset AWS_DEFAULT_REGION
+    else
+        export AWS_DEFAULT_REGION="$1"
+    fi
+}
+
+_aws-region() {
+    compadd us-west-2 us-east-1 us-east-2 us-west-1 ap-southeast-1 ap-northeast-1 ap-southeast-2 eu-west-1 eu-central-1
+    compadd clear
+}
+compdef _aws-region aws-region
+
 # Open the AWS console as the active (or given) profile, mimicking the internal
 # `aws-login`: exchange the profile's temporary STS creds for a federation
 # sign-in token, then open the console in the browser. Requires temporary creds
@@ -54,30 +71,47 @@ aws-login() {
 compdef _aws-profile aws-login
 
 # Discover EKS clusters and import each into ~/.kube/custom-contexts/, one file per
-# cluster, context aliased <cluster>-<env>-<region> (env = last '-' segment of the
-# profile). The kube.zsh merge loader then exposes them to `kubectx`. Args are
-# profiles to sweep; with none, sweeps every ~/.aws/config profile that has a
-# role_arn (the assumable custom roles — jump roles lack eks perms). Override the
-# region list with EKS_REGIONS="a b c". Needs warm creds: run `aws sso login`
-# first, and note a profile's role-chained session lasts only ~1h.
+# cluster, context named <cluster>-<label>-<region> where <label> is the profile
+# minus its first segment (which duplicates the cluster's project name) — so two
+# roles on the same cluster (e.g. kirin-sre-prod vs kirin-fullaccess-prod) get
+# distinct names instead of colliding. The context, cluster, and user entries are
+# all renamed to that same stem: `aws eks update-kubeconfig --alias` only renames
+# the context, leaving the cluster/user keyed by a shared ARN, so two roles would
+# otherwise resolve to whichever user the merge loader saw first. The kube.zsh
+# merge loader then exposes them to `kubectx`. Args are profiles to sweep; with
+# none, sweeps every ~/.aws/config profile that has a role_arn (the assumable
+# custom roles — jump roles lack eks perms). Override the region list with
+# EKS_REGIONS="a b c". Needs warm creds: run `aws sso login` first, and note a
+# profile's role-chained session lasts only ~1h.
 eks-import() {
     local -a profiles regions
     profiles=("$@")
     (( ${#profiles} )) || profiles=(${(f)"$(awk '/^\[profile /{p=$0; sub(/^\[profile /,"",p); sub(/\]$/,"",p)} /role_arn/{print p}' ~/.aws/config)"})
     regions=(${=EKS_REGIONS:-us-west-2 us-east-1 us-east-2 us-west-1 ap-southeast-1 ap-northeast-1 ap-southeast-2 eu-west-1 eu-central-1})
 
-    local profile env region cluster dir clusters
+    local profile label region cluster dir file ctx clusters
     for profile in $profiles; do
-        env=${profile##*-}
+        label=${profile#*-}
         for region in $regions; do
             clusters=$(AWS_PROFILE=$profile aws eks list-clusters --region $region --query 'clusters[]' --output text 2>/dev/null) || continue
             [[ -z $clusters ]] && continue
             for cluster in ${(z)clusters}; do
                 dir=$HOME/.kube/custom-contexts/${profile}-${region}
+                file=$dir/${cluster}.yml
+                ctx=${cluster}-${label}-${region}
                 mkdir -p $dir
+                # Regenerate fresh so a rename never leaves stale ARN-keyed entries behind.
+                rm -f $file
                 AWS_PROFILE=$profile aws eks update-kubeconfig --region $region --name $cluster \
-                    --kubeconfig $dir/${cluster}.yml --alias ${cluster}-${env}-${region} >/dev/null \
-                    && print "imported ${cluster}-${env}-${region}"
+                    --kubeconfig $file --alias $ctx >/dev/null || continue
+                yq -i "
+                    .clusters[0].name = \"$ctx\"
+                    | .contexts[0].context.cluster = \"$ctx\"
+                    | .contexts[0].context.user = \"$ctx\"
+                    | .users[0].name = \"$ctx\"
+                    | .\"current-context\" = \"$ctx\"
+                " $file \
+                    && print "imported $ctx"
             done
         done
     done
