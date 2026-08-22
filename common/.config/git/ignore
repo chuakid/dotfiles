@@ -10,3 +10,9 @@ Session.vim
 .claude/settings.local.json
 
 **/.claude/settings.local.json
+
+# mise per-project local overrides (machine-specific env, secrets) — never commit
+mise.local.toml
+.mise.local.toml
+mise.*.local.toml
+.mise.*.local.toml
