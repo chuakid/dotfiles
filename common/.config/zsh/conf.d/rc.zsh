@@ -42,6 +42,5 @@ bindkey '^x^e' edit-command-line
 # Tool integrations
 command -v zoxide >/dev/null && eval "$(zoxide init zsh --cmd cd)"
 command -v fzf >/dev/null && source <(fzf --zsh)
-(( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 [[ ! -f "$HOME/.local/bin/env" ]] || . "$HOME/.local/bin/env"

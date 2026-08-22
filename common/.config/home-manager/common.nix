@@ -34,7 +34,6 @@
     lazygit
     fd
     fzf
-    direnv
     doggo
     btop
     ripgrep
@@ -42,11 +41,9 @@
     mtr
     navi
     fnm
+    mise
 
     oh-my-posh
-
-    # languages
-    go
 
     # file manager
     yazi
@@ -57,9 +54,6 @@
 
     # curl manager
     hurl
-
-    cargo
-    rustc
 
     # uv
 
