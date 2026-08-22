@@ -57,14 +57,13 @@ $ZDOTDIR/
 
 ### Language runtimes & project env (mise)
 
-[mise](https://mise.jdx.dev) manages language runtimes and per-project
-environments, replacing `fnm` and `direnv` entirely.
+[mise](https://mise.jdx.dev) manages language runtimes and per-project environments.
 
 - **Global tools** are pinned in `~/.config/mise/config.toml` (`go`, `rust`,
   `node`) and activated by `conf.d/mise.zsh`.
 - **Per-project** config lives in a `mise.local.toml` at the project root. It is
   gitignored globally (via `~/.config/git/ignore`) so machine-specific env and
-  secrets stay untracked — the role the old `.envrc` files played. Example:
+  secrets stay untracked. Example:
 
   ```toml
   [env]
