@@ -5,6 +5,8 @@ go = "latest"
 node = "lts"
 # The rust core plugin drives rustup under the hood; `cargo`/`rustc` come with it.
 rust = "latest"
+uv = "latest"
 
 [settings]
 go.set_gobin = false
+python.uv_venv_auto = "create|source"
