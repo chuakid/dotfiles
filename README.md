@@ -8,7 +8,8 @@
 
 ## Description
 
-Kelvin's dotfiles, managed by stow and Nix home-manager.
+Kelvin's dotfiles, managed by stow and Nix home-manager, with
+[mise](https://mise.jdx.dev) for language runtimes and per-project environments.
 
 ## Setup Scripts
 
@@ -37,9 +38,9 @@ within each directory.
 $ZDOTDIR/
 ├── .zshrc              # loader: prompt + plugins, then sources conf.d/*.zsh, conf.d.local/*.zsh
 ├── conf.d/             # tracked, shared across machines
-│   ├── rc.zsh          # PATH, history, completions, emacs keybindings, zoxide/fzf/direnv
+│   ├── rc.zsh          # PATH, history, completions, emacs keybindings, zoxide/fzf
 │   ├── aliases.zsh     # shell aliases (git, eza, kubectl, …)
-│   └── fnm.zsh         # Node version manager
+│   └── mise.zsh        # activates mise (go/rust/node + per-project runtimes)
 ├── conf.d.local/       # gitignored, per-machine (secrets, work tools, PATH tweaks)
 ├── antidote/           # plugin manager (submodule)
 └── .zsh_plugins.txt    # antidote plugin list
@@ -53,6 +54,28 @@ $ZDOTDIR/
 - Plugins are managed by [antidote](https://github.com/mattmc3/antidote); edit
   `.zsh_plugins.txt` to add/remove them.
 - stow mpv if needed (`stow mpv`)
+
+### Language runtimes & project env (mise)
+
+[mise](https://mise.jdx.dev) manages language runtimes and per-project
+environments, replacing `fnm` and `direnv` entirely.
+
+- **Global tools** are pinned in `~/.config/mise/config.toml` (`go`, `rust`,
+  `node`) and activated by `conf.d/mise.zsh`.
+- **Per-project** config lives in a `mise.local.toml` at the project root. It is
+  gitignored globally (via `~/.config/git/ignore`) so machine-specific env and
+  secrets stay untracked — the role the old `.envrc` files played. Example:
+
+  ```toml
+  [env]
+  SOME_SECRET = "…"
+  _.python.venv = { path = ".venv" }   # auto-activates the venv on cd
+  ```
+
+  The venv path is relative to the config file, so it must be per-project — a
+  global config can't express "activate whatever project I'm in".
+- **Gotcha:** mise won't load a new or changed config file until it's trusted.
+  If activation is silently skipped, run `mise trust` in the project.
 
 ### Fish
 - Run "fish_update_completions" to update completions from manpages

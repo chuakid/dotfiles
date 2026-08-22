@@ -40,7 +40,6 @@
     git
     mtr
     navi
-    fnm
     mise
 
     oh-my-posh

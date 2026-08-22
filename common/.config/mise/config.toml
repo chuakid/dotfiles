@@ -1,5 +1,6 @@
 # Global tool versions. Per-project mise.toml files override these on cd.
 [tools]
 go = "latest"
+node = "lts"
 # The rust core plugin drives rustup under the hood; `cargo`/`rustc` come with it.
 rust = "latest"
