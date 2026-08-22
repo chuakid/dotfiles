@@ -41,6 +41,7 @@
     mtr
     navi
     mise
+    gh
 
     oh-my-posh
 
