@@ -54,8 +54,6 @@
     # curl manager
     hurl
 
-    # uv
-
     fish
     typst
 
