@@ -1,9 +1,9 @@
 .vscode
 .idea
 .netrwhist
-.zcompdump
+*.zcompdump*
 .zsh_plugins.zsh
 .zsh_history
-.zcompdump
 common/dot-config/zsh/conf.d.local/
 common/dot-config/zsh/completions/
+
