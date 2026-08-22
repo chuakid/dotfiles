@@ -14,9 +14,17 @@ unset zsh_plugins
 # Completions. Run compinit ONCE, after plugins, so plugin-provided completion
 # dirs are already on fpath. Our own completion dirs are prepended so a command
 # we ship (e.g. `watcher`) wins over a system completion that also lists it
-# (`_openstack`). Rebuild the dumpfile at most once a day; otherwise -C reuses
-# the cache and skips the slow insecure-directory security audit.
-fpath=($ZDOTDIR/completions $ZDOTDIR/conf.d.local/completions $fpath)
+# (`_openstack`). Homebrew's completions follow ours: brew's shellenv adds them
+# in .zprofile, but non-login interactive shells skip .zprofile, so add them
+# here — the (N) glob drops the entry when the dir is absent (e.g. Linux).
+# Rebuild the dumpfile at most once a day; otherwise -C reuses the cache and
+# skips the slow insecure-directory security audit.
+fpath=(
+    $ZDOTDIR/completions
+    $ZDOTDIR/conf.d.local/completions
+    /opt/homebrew/share/zsh/site-functions(N)
+    $fpath
+)
 autoload -Uz compinit
 if [[ -n $ZDOTDIR/.zcompdump(#qNmh+24) ]]; then
     compinit
