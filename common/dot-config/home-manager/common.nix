@@ -30,7 +30,6 @@
     zoxide
     tlrc
     jq
-    pnpm
     lazygit
     fd
     fzf
