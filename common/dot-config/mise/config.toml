@@ -2,6 +2,7 @@
 [tools]
 go = "latest"
 node = "lts"
+pnpm = "latest"
 # The rust core plugin drives rustup under the hood; `cargo`/`rustc` come with it.
 rust = "latest"
 uv = "latest"
