@@ -365,7 +365,14 @@ require('lazy').setup({
         },
       }
       vim.keymap.set('n', '\\', function()
-        require('mini.files').open()
+        local MiniFiles = require 'mini.files'
+        if not MiniFiles.close() then
+          MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
+        end
+
+        vim.schedule(function()
+          MiniFiles.reveal_cwd()
+        end)
       end, { desc = 'Open mini files' })
     end,
   },
