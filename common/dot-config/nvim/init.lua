@@ -374,6 +374,8 @@ require('lazy').setup({
           MiniFiles.reveal_cwd()
         end)
       end, { desc = 'Open mini files' })
+
+      require('mini.icons').mock_nvim_web_devicons()
     end,
   },
   { -- Swiss-army-knife: file explorer, fuzzy picker, lazygit, dashboard, and more
@@ -555,7 +557,6 @@ require('lazy').setup({
   },
   { -- Statusline
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     config = function()
       require('lualine').setup()
     end,
