@@ -355,6 +355,18 @@ require('lazy').setup({
       require('mini.notify').setup {
         lsp_progress = { enable = false },
       }
+
+      require('mini.files').setup {
+        mappings = {
+          go_in_plus = '<CR>',
+        },
+        opts = {
+          use_as_default_explorer = true,
+        },
+      }
+      vim.keymap.set('n', '\\', function()
+        require('mini.files').open()
+      end, { desc = 'Open mini files' })
     end,
   },
   { -- Swiss-army-knife: file explorer, fuzzy picker, lazygit, dashboard, and more
@@ -362,13 +374,6 @@ require('lazy').setup({
     priority = 1000,
     lazy = false,
     keys = {
-      {
-        '\\',
-        function()
-          require('snacks.explorer').open()
-        end,
-        desc = 'Open explorer',
-      },
       -- Picker keymaps
       {
         '<leader><leader>',
