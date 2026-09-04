@@ -75,7 +75,7 @@ blocks:
         style: plain
         powerline_symbol: ""
         foreground: p:blue
-        template: "{{ if .SSHSession }}{{ .UserName }}@{{ .HostName }}{{ end }}❯"
+        template: "{{ if .SSHSession }}⚡{{ .UserName }}@{{ .HostName }}{{ end }}❯"
 transient_prompt:
   background: transparent
   template: "❯ "
