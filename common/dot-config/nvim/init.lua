@@ -376,7 +376,11 @@ require('lazy').setup({
       end, { desc = 'Open mini files' })
 
       require('mini.icons').mock_nvim_web_devicons()
-      require('mini.diff').setup()
+      require('mini.diff').setup {
+        view = {
+          style = 'sign',
+        },
+      }
       vim.keymap.set('n', '<leader>mo', function()
         require('mini.diff').toggle_overlay()
       end)
