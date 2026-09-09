@@ -376,6 +376,13 @@ require('lazy').setup({
       end, { desc = 'Open mini files' })
 
       require('mini.icons').mock_nvim_web_devicons()
+      require('mini.diff').setup()
+      vim.keymap.set('n', '<leader>mo', function()
+        require('mini.diff').toggle_overlay()
+      end)
+      vim.keymap.set('n', '<leader>hr', function()
+        require('mini.diff').do_hunks 'reset'
+      end)
     end,
   },
   { -- Swiss-army-knife: file explorer, fuzzy picker, lazygit, dashboard, and more
@@ -581,24 +588,6 @@ require('lazy').setup({
   },
   { 'fei6409/log-highlight.nvim', opts = {} }, -- syntax highlighting for log files
   { 'sphamba/smear-cursor.nvim', opts = {} }, -- animated cursor trail
-
-  -- ── Git ────────────────────────────────────────────────────────
-  { -- Inline git blame, hunk staging/reset, and sign column diff markers
-    'lewis6991/gitsigns.nvim',
-    lazy = false,
-    opts = {
-      current_line_blame = true,
-      current_line_blame_opts = { delay = 200 },
-    },
-    keys = {
-      {
-        '<leader>hr',
-        function()
-          require('gitsigns').reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
-        end,
-      },
-    },
-  },
 
   -- ── Editing ────────────────────────────────────────────────────
   { -- VSCode/Sublime-style multiple cursors (Ctrl-d to add)
