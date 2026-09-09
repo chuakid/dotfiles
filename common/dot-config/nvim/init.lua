@@ -558,7 +558,11 @@ require('lazy').setup({
   { -- Statusline
     'nvim-lualine/lualine.nvim',
     config = function()
-      require('lualine').setup()
+      require('lualine').setup {
+        options = {
+          theme = 'auto',
+        },
+      }
     end,
   },
   { -- Renders markdown with headings, code blocks, and links in-buffer
