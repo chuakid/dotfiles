@@ -15,6 +15,7 @@ DO make task lists at the beginning
 DO avoid "clever" code like overly obtuse list comprehensions in Python. Keep code simple.
 DO NOT flatter, and do not give compliments unless I am specifically asking for your judgement
 DO NOT sign your name in my commits
+DO NOT use em-dashes
 Feel free to ask many questions If you are in doubt of my intent, don't guess. Ask.
 
 ## Code Style
