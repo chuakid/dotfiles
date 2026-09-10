@@ -363,6 +363,10 @@ require('lazy').setup({
         opts = {
           use_as_default_explorer = true,
         },
+        windows = {
+          preview = true,
+          width_preview = 50,
+        },
       }
       vim.keymap.set('n', '\\', function()
         local MiniFiles = require 'mini.files'
