@@ -30,8 +30,37 @@ resurrect.state_manager.periodic_save({
 	save_windows = true,
 	save_workspaces = true,
 })
-wezterm.on("gui-startup", resurrect.state_manager.resurrect_on_gui_startup)
--- periodic_save writes state JSONs but not the current_state pointer that resurrect_on_gui_startup reads
+-- resurrect_on_gui_startup only restores the single workspace named in the
+-- current_state pointer. Restore every saved workspace instead, then focus the
+-- one that was active last.
+wezterm.on("gui-startup", function()
+	local state_manager = resurrect.state_manager
+	local sep = package.config:sub(1, 1)
+
+	local active_workspace
+	local pointer = io.open(state_manager.save_state_dir .. "current_state", "r")
+	if pointer then
+		active_workspace = pointer:read("*line")
+		pointer:close()
+	end
+
+	for _, path in ipairs(wezterm.read_dir(state_manager.save_state_dir .. "workspace")) do
+		local name = path:match("([^" .. sep .. "]+)%.json$")
+		if name then
+			resurrect.workspace_state.restore_workspace(state_manager.load_state(name, "workspace"), {
+				spawn_in_workspace = true,
+				relative = true,
+				restore_text = true,
+				on_pane_restore = require("resurrect.tab_state").default_on_pane_restore,
+			})
+		end
+	end
+
+	if active_workspace then
+		wezterm.mux.set_active_workspace(active_workspace)
+	end
+end)
+-- periodic_save writes state JSONs but not the current_state pointer used above
 wezterm.on("resurrect.state_manager.periodic_save.finished", function()
 	resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
 end)
