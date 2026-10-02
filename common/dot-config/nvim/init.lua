@@ -40,6 +40,8 @@ vim.opt.guicursor = {
   'n-v-c:block-blinkwait700-blinkon400-blinkoff250',
   'i-ci:ver25-blinkwait700-blinkon400-blinkoff250',
   'r-cr-o:hor20-blinkwait700-blinkon400-blinkoff250',
+  -- Without a 't' entry, :terminal stops redrawing between keypresses (e.g. lazygit spinner freezes)
+  't:block-blinkon500-blinkoff500-TermCursor',
 }
 
 vim.opt.cursorline = true
