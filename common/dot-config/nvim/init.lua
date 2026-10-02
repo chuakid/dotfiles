@@ -61,7 +61,7 @@ vim.cmd [[autocmd RecordingLeave * set cmdheight=0]]
 
 -- folding
 vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()' -- creating folds using treesitter
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()' -- creating folds using treesitter
 vim.opt.foldlevelstart = 99
 vim.opt.foldcolumn = 'auto'
 
