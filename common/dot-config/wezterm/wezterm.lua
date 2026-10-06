@@ -21,50 +21,6 @@ config.window_background_opacity = 0.98
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 1000
 
--- resurrect
-
-local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.wezterm")
-resurrect.state_manager.periodic_save({
-	interval_seconds = 60,
-	save_tabs = true,
-	save_windows = true,
-	save_workspaces = true,
-})
--- resurrect_on_gui_startup only restores the single workspace named in the
--- current_state pointer. Restore every saved workspace instead, then focus the
--- one that was active last.
-wezterm.on("gui-startup", function()
-	local state_manager = resurrect.state_manager
-	local sep = package.config:sub(1, 1)
-
-	local active_workspace
-	local pointer = io.open(state_manager.save_state_dir .. "current_state", "r")
-	if pointer then
-		active_workspace = pointer:read("*line")
-		pointer:close()
-	end
-
-	for _, path in ipairs(wezterm.read_dir(state_manager.save_state_dir .. "workspace")) do
-		local name = path:match("([^" .. sep .. "]+)%.json$")
-		if name then
-			resurrect.workspace_state.restore_workspace(state_manager.load_state(name, "workspace"), {
-				spawn_in_workspace = true,
-				relative = true,
-				restore_text = true,
-				on_pane_restore = require("resurrect.tab_state").default_on_pane_restore,
-			})
-		end
-	end
-
-	if active_workspace then
-		wezterm.mux.set_active_workspace(active_workspace)
-	end
-end)
--- periodic_save writes state JSONs but not the current_state pointer used above
-wezterm.on("resurrect.state_manager.periodic_save.finished", function()
-	resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
-end)
-
 -- keys
 config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
 config.keys = {
@@ -127,46 +83,6 @@ smart_splits.apply_to_config(config, {
 		resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
 	},
 })
-
-wezterm.on("augment-command-palette", function(_, _)
-	local workspace_state = resurrect.workspace_state
-	return {
-		{
-			brief = "Window | Workspace: Save Workspaces",
-			icon = "cod_save",
-			action = wezterm.action_callback(function(_, _, _)
-				resurrect.state_manager.save_state(workspace_state.get_workspace_state())
-				resurrect.state_manager.write_current_state(wezterm.mux.get_active_workspace(), "workspace")
-			end),
-		},
-		{
-			brief = "Window | Workspace: Rename Workspace",
-			icon = "md_briefcase_edit",
-			action = wezterm.action.PromptInputLine({
-				description = "Enter new name for workspace",
-				action = wezterm.action_callback(function(_, _, line)
-					if line then
-						wezterm.mux.rename_workspace(wezterm.mux.get_active_workspace(), line)
-						resurrect.state_manager.save_state(workspace_state.get_workspace_state())
-					end
-				end),
-			}),
-		},
-		{
-			brief = "Window | Delete Workspace",
-			action = wezterm.action_callback(function(win, pane)
-				resurrect.fuzzy_loader.fuzzy_load(win, pane, function(id)
-					resurrect.state_manager.delete_state(id)
-				end, {
-					title = "Delete State",
-					description = "Select State to Delete and press Enter = accept, Esc = cancel, / = filter",
-					fuzzy_description = "Search State to Delete: ",
-					is_fuzzy = true,
-				})
-			end),
-		},
-	}
-end)
 
 -- remove ligatures
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
