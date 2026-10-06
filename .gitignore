@@ -6,4 +6,6 @@
 .zsh_history
 common/dot-config/zsh/conf.d.local/
 common/dot-config/zsh/completions/
+common/dot-config/tmux/plugins/*
+!common/dot-config/tmux/plugins/tpm/
 

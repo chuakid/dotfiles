@@ -1,6 +1,6 @@
-[submodule "common/dot-config/tmux/plugins/catppuccin"]
-	path = common/dot-config/tmux/plugins/catppuccin
-	url = https://github.com/catppuccin/tmux.git
 [submodule "common/dot-config/zsh/antidote"]
 	path = common/dot-config/zsh/antidote
 	url = https://github.com/mattmc3/antidote.git
+[submodule "common/dot-config/tmux/plugins/tpm"]
+	path = common/dot-config/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
