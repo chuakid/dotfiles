@@ -90,5 +90,17 @@ config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
 -- Set the default_prog to fish or fall back to the system's default
 -- config.default_prog = { "sh", "-c", "if command -v fish >/dev/null 2>&1; then exec fish; else exec $SHELL; fi" }
+--
+config.unix_domains = {
+	{
+		name = "unix",
+	},
+}
+
+-- This causes `wezterm` to act as though it was started as
+-- `wezterm connect unix` by default, connecting to the unix
+-- domain on startup.
+-- If you prefer to connect manually, leave out this line.
+config.default_gui_startup_args = { "connect", "unix" }
 
 return config
