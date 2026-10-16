@@ -31,7 +31,7 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
 vim.opt.clipboard = 'unnamedplus'
-
+vim.keymap.set('t', '<C-/><C-/>', [[<C-\><C-n>]], { desc = 'Exit terminal mode' })
 -- ╔══════════════════════════════════════════════════════════════╗
 -- ║                      Visual Settings                        ║
 -- ╚══════════════════════════════════════════════════════════════╝
