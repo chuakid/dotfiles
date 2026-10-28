@@ -28,3 +28,6 @@ Only add code comments in the following scenarios:
 - First try to eliminate the foot-gun or make it obvious either with code structure or the type system. For example, if we have a set of boolean flags and some combinations are invalid, consider replacing them with an enum
 - DO NOT add comments that are restatements of a function or variable name
 - Commit messages should be detailed, but kept to one paragraph
+
+## Misc
+- Put worktrees in .claude/worktrees in the same folder as the working repository
