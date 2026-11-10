@@ -1,3 +1,7 @@
+# Config version for compatibility and deprecations
+# See: https://nikitabobko.github.io/AeroSpace/guide#config-version
+config-version = 2
+
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
@@ -6,6 +10,14 @@ after-startup-command = [
 
 # Start AeroSpace at login
 start-at-login = true
+
+# Automatically reload the config when the config file is saved
+# After setting this to true, reload once manually to start the auto-reloading
+auto-reload-config = true
+
+# Workspaces that stay alive even when they contain no windows.
+# Empty means workspaces are destroyed when they become empty and invisible.
+persistent-workspaces = []
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -39,33 +51,36 @@ automatically-unhide-macos-hidden-apps = false
 # Auto-assign apps to workspaces on window creation.
 # Note: only fires for newly detected windows; already-open windows must be moved manually.
 # See: https://nikitabobko.github.io/AeroSpace/guide#on-window-detected-callback
-[[on-window-detected]]
-if.app-id = 'com.microsoft.edgemac'
-run = 'move-node-to-workspace Browser'
-
-[[on-window-detected]]
-if.app-id = 'com.github.wez.wezterm'
-run = 'move-node-to-workspace Terminal'
-
-[[on-window-detected]]
-if.app-id = 'com.tinyspeck.slackmacgap'
-run = 'move-node-to-workspace Slack'
-
-[[on-window-detected]]
-if.app-id = 'com.spotify.client'
-run = 'move-node-to-workspace P'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.mail'
-run = 'move-node-to-workspace M'
-
-[[on-window-detected]]
-if.app-id = 'com.apple.iCal'
-run = 'move-node-to-workspace C'
-
-[[on-window-detected]]
-if.app-id = 'Cisco-Systems.Spark'
-run = 'move-node-to-workspace W'
+on-window-detected = [
+    {
+        if = 'test %{app-bundle-id} = com.microsoft.edgemac',
+        run = 'move-node-to-workspace Browser',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.github.wez.wezterm',
+        run = 'move-node-to-workspace Terminal',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.tinyspeck.slackmacgap',
+        run = 'move-node-to-workspace Slack',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.spotify.client',
+        run = 'move-node-to-workspace P',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.apple.mail',
+        run = 'move-node-to-workspace M',
+    },
+    {
+        if = 'test %{app-bundle-id} = com.apple.iCal',
+        run = 'move-node-to-workspace C',
+    },
+    {
+        if = 'test %{app-bundle-id} = Cisco-Systems.Spark',
+        run = 'move-node-to-workspace W',
+    },
+]
 
 # Possible values: (qwerty|dvorak|colemak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
