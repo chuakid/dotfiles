@@ -76,6 +76,20 @@ $ZDOTDIR/
 - **Gotcha:** mise won't load a new or changed config file until it's trusted.
   If activation is silently skipped, run `mise trust` in the project.
 
+### Claude Code
+
+`~/.claude/CLAUDE.md` holds the global rules shared across machines. Its last
+line, `@~/.claude/CLAUDE.local.md`, imports a per-machine file with rules that
+apply only to that machine (work tools, internal hosts, and so on). This uses
+Claude Code's [`@path` import syntax](https://docs.claude.com/en/docs/claude-code/memory#claude-md-imports).
+
+- **Shared rules** go in `common/dot-claude/CLAUDE.md` (committed).
+- **Per-machine rules** go in `~/.claude/CLAUDE.local.md`, which this repo does
+  not track. On work machines it is a stow symlink from the separate
+  `~/internal_dotfiles` repo (`configs/.claude/CLAUDE.local.md`). On other
+  machines, create it as a plain file or leave it absent.
+- Run `/memory` in a Claude Code session to confirm the import loaded.
+
 ### Fish
 - Run "fish_update_completions" to update completions from manpages
 - Machine specific goes into `~/.config/fish/config.fish`

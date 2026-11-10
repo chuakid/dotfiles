@@ -31,3 +31,6 @@ Only add code comments in the following scenarios:
 
 ## Misc
 - Put worktrees in .claude/worktrees in the same folder as the working repository
+
+## Machine-local Rules
+@~/.claude/CLAUDE.local.md
