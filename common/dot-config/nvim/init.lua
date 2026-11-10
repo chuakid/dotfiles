@@ -688,10 +688,17 @@ require('lazy').setup({
     },
   },
   { -- Navigate and resize splits seamlessly (works across tmux panes too)
-    'mrjones2014/smart-splits.nvim',
+    'smart-splits-nvim/smart-splits.nvim',
+    -- must not lazy load: the tmux backend marks the pane as running nvim only when it loads
     lazy = false,
+    dependencies = {
+      { 'smart-splits-nvim/backend-tmux', main = 'smart-splits-backend-tmux', opts = {} },
+      { 'smart-splits-nvim/backend-wezterm', main = 'smart-splits-backend-wezterm', opts = {} },
+    },
     config = function()
       local ss = require 'smart-splits'
+      -- tmux first: it is the inner multiplexer when running tmux inside WezTerm
+      ss.setup { mux = { backend = { 'smart-splits-backend-tmux', 'smart-splits-backend-wezterm' } } }
       vim.keymap.set('n', '<A-Left>', ss.resize_left)
       vim.keymap.set('n', '<A-Down>', ss.resize_down)
       vim.keymap.set('n', '<A-Up>', ss.resize_up)
@@ -700,7 +707,6 @@ require('lazy').setup({
       vim.keymap.set('n', '<C-j>', ss.move_cursor_down)
       vim.keymap.set('n', '<C-k>', ss.move_cursor_up)
       vim.keymap.set('n', '<C-l>', ss.move_cursor_right)
-      vim.keymap.set('n', '<C-\\>', ss.move_cursor_previous)
     end,
   },
   { -- Generate language-appropriate docstrings/annotations
