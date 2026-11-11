@@ -617,32 +617,6 @@ require('lazy').setup({
   },
 
   -- ── Editing ────────────────────────────────────────────────────
-  { -- VSCode/Sublime-style multiple cursors (Ctrl-d to add)
-    'jake-stewart/multicursor.nvim',
-    branch = '1.0',
-    config = function()
-      local mc = require 'multicursor-nvim'
-      mc.setup()
-
-      vim.keymap.set({ 'n', 'x' }, '<c-d>', function()
-        mc.matchAddCursor(1)
-      end, { desc = 'Add cursor' })
-      vim.keymap.set('n', '<c-leftmouse>', mc.handleMouse)
-      vim.keymap.set('n', '<c-leftdrag>', mc.handleMouseDrag)
-      vim.keymap.set('n', '<c-leftrelease>', mc.handleMouseRelease)
-
-      -- Esc clears cursors, or re-enables them if they were disabled
-      mc.addKeymapLayer(function(layerSet)
-        layerSet('n', '<esc>', function()
-          if not mc.cursorsEnabled() then
-            mc.enableCursors()
-          else
-            mc.clearCursors()
-          end
-        end)
-      end)
-    end,
-  },
   { -- claude code integration
     'coder/claudecode.nvim',
     dependencies = { 'folke/snacks.nvim' },
